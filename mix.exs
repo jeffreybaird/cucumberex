@@ -41,8 +41,9 @@ defmodule Cucumberex.MixProject do
   defp package do
     [
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/cucumberex/cucumberex"},
-      maintainers: ["cucumberex contributors"]
+      links: %{"GitHub" => "https://github.com/jeffreybaird/cucumberex"},
+      maintainers: ["Jeffrey Baird"],
+      files: ~w(lib mix.exs README.md LICENSE CHANGELOG.md)
     ]
   end
 
