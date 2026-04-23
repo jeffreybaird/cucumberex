@@ -104,14 +104,24 @@ def deps do
 end
 ```
 
+Import the formatter exports so `mix format` doesn't mangle the DSL in
+your project's `.formatter.exs`:
+
+```elixir
+[
+  import_deps: [:cucumberex],
+  inputs: ["features/**/*.{ex,exs}", "{mix,.formatter}.exs", ...]
+]
+```
+
 Then:
 
 ```
 $ mix deps.get
-$ mix cucumber --init
+$ mix cucumber.init
 ```
 
-`--init` creates:
+`mix cucumber.init` creates:
 
 ```
 features/
@@ -170,6 +180,19 @@ end
 ```
 $ mix cucumber
 ```
+
+## Mix Tasks
+
+Once installed, Cucumberex ships four mix tasks:
+
+| Task                          | What it does                                          |
+|-------------------------------|-------------------------------------------------------|
+| `mix cucumber`                | Run the feature suite (main entry point)              |
+| `mix cucumber.init`           | Scaffold `features/` with a starter project           |
+| `mix cucumber.gen.feature NAME` | Generate an empty `features/NAME.feature`            |
+| `mix cucumber.gen.steps NAME` | Generate `features/step_definitions/NAME_steps.ex`    |
+
+Run `mix help cucumber` (or any of the sub-tasks) for full docs.
 
 ## Writing Feature Files
 
@@ -420,19 +443,22 @@ end
 
 ## Hooks
 
+All hook macros end with an underscore to avoid clashing with Elixir
+keywords (`after`) and for naming consistency.
+
 ```elixir
 defmodule TestSupport do
   use Cucumberex.Hooks.DSL
 
-  before_all fn ->
+  before_all_ fn ->
     MyApp.start_test_environment()
   end
 
-  before fn world ->
-    Map.put(world, :transaction_started_at, System.monotonic_time())
+  before_ fn world ->
+    Map.put(world, :started_at, System.monotonic_time())
   end
 
-  before "@db", fn world ->
+  before_ "@db", fn world ->
     Ecto.Adapters.SQL.Sandbox.checkout(MyApp.Repo)
     world
   end
@@ -447,32 +473,34 @@ defmodule TestSupport do
     world
   end
 
-  before_step fn world ->
+  before_step_ fn world ->
     Logger.metadata(step_started_at: System.monotonic_time())
     world
   end
 
-  after_all fn ->
+  after_all_ fn ->
     MyApp.stop_test_environment()
   end
 end
 ```
 
-Hook phases:
+Hook macros and phases:
 
-| Hook            | When                                      |
-|-----------------|-------------------------------------------|
-| `before_all`    | Once, before any scenario                 |
-| `before`        | Before each scenario                      |
-| `before_step`   | Before each step                          |
-| `after_step`    | After each step                           |
-| `after_`        | After each scenario (passed or failed)    |
-| `after_all`     | Once, after all scenarios                 |
+| Macro                    | When                                      |
+|--------------------------|-------------------------------------------|
+| `before_all_/1`          | Once, before any scenario                 |
+| `before_/1`, `before_/2` | Before each scenario                      |
+| `before_step_/1`         | Before each step                          |
+| `after_step_/1`          | After each step                           |
+| `after_/1`, `after_/2`   | After each scenario (passed or failed)    |
+| `after_all_/1`           | Once, after all scenarios                 |
+| `around_/1`, `around_/2` | Wrap the scenario                         |
 
-A string as the first argument becomes a tag expression filter:
+The two-arity `before_` / `after_` / `around_` take a tag expression as
+the first argument to scope the hook:
 
 ```elixir
-before "@admin and not @guest", fn world -> ... end
+before_ "@admin and not @guest", fn world -> ... end
 ```
 
 ## Tag Expressions

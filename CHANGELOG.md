@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `mix cucumber.init` as a dedicated task (extracted from `mix cucumber --init`).
+- `mix cucumber.gen.feature NAME` generates an empty feature file.
+- `mix cucumber.gen.steps NAME` generates a step definition module.
+- `.formatter.exs` exports `locals_without_parens` for all DSL and hook
+  macros. Consumers add `import_deps: [:cucumberex]` to their
+  `.formatter.exs` to avoid `mix format` mangling step definitions.
+
+### Removed
+
+- `mix cucumber --init` flag (use `mix cucumber.init` instead).
+
+### Fixed
+
+- README hook examples and phase table now use the actual macro names
+  (`before_`, `after_`, `before_step_`, `after_step_`, `before_all_`,
+  `after_all_`, `around_`).
+
 ## [0.1.0] - 2026-04-23
 
 Initial release.
