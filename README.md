@@ -2,7 +2,7 @@
 
 [![Hex.pm](https://img.shields.io/hexpm/v/cucumberex.svg)](https://hex.pm/packages/cucumberex)
 [![HexDocs](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/cucumberex)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/jeffreybaird/cucumberex/blob/main/LICENSE)
 
 A full-featured [Cucumber](https://cucumber.io) BDD framework for Elixir.
 Write `.feature` files in Gherkin, bind them to Elixir step definitions,
@@ -738,8 +738,10 @@ mix cucumber                      # 11 scenarios (this project's own features)
 Issues and PRs welcome at
 [github.com/jeffreybaird/cucumberex](https://github.com/jeffreybaird/cucumberex).
 
-This project adheres to the conventions in [`CLAUDE.md`](./CLAUDE.md) and
-the skill files under `.claude/`:
+This project adheres to the conventions in
+[`CLAUDE.md`](https://github.com/jeffreybaird/cucumberex/blob/main/CLAUDE.md)
+and the skill files under
+[`.claude/`](https://github.com/jeffreybaird/cucumberex/tree/main/.claude):
 
 - Tagged-tuple error protocol (`{:ok, _}` / `{:error, :atom}`)
 - Narrow `rescue` (specific exception types only)
@@ -759,4 +761,4 @@ mix cucumber
 
 ## License
 
-[MIT](./LICENSE) © 2026 Jeffrey Baird
+[MIT](https://github.com/jeffreybaird/cucumberex/blob/main/LICENSE) © 2026 Jeffrey Baird

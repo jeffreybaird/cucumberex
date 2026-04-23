@@ -49,7 +49,13 @@ defmodule Cucumberex.MixProject do
   defp docs do
     [
       main: "readme",
-      extras: ["README.md"]
+      source_url: "https://github.com/jeffreybaird/cucumberex",
+      source_ref: "v#{@version}",
+      extras: [
+        "README.md",
+        "CHANGELOG.md",
+        "LICENSE"
+      ]
     ]
   end
 
