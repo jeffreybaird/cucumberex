@@ -13,7 +13,6 @@ defmodule Cucumberex.MixProject do
       description: "Full-featured Cucumber/BDD framework for Elixir",
       package: package(),
       docs: docs(),
-      aliases: aliases(),
       elixirc_paths: elixirc_paths(Mix.env())
     ]
   end
@@ -43,7 +42,7 @@ defmodule Cucumberex.MixProject do
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/jeffreybaird/cucumberex"},
       maintainers: ["Jeffrey Baird"],
-      files: ~w(lib mix.exs README.md LICENSE CHANGELOG.md)
+      files: ~w(lib mix.exs .formatter.exs README.md LICENSE CHANGELOG.md)
     ]
   end
 
@@ -51,12 +50,6 @@ defmodule Cucumberex.MixProject do
     [
       main: "readme",
       extras: ["README.md"]
-    ]
-  end
-
-  defp aliases do
-    [
-      cucumber: ["cucumber"]
     ]
   end
 
