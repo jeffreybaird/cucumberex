@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-04-23
+
 ### Added
 
 - `mix cucumber.init` as a dedicated task (extracted from `mix cucumber --init`).
@@ -16,9 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   macros. Consumers add `import_deps: [:cucumberex]` to their
   `.formatter.exs` to avoid `mix format` mangling step definitions.
 
-### Removed
+### Changed
 
-- `mix cucumber --init` flag (use `mix cucumber.init` instead).
+- **Breaking:** `mix cucumber --init` is removed; use `mix cucumber.init`.
+  This is the only breaking change versus 0.1.0.
 
 ### Fixed
 
@@ -75,5 +78,6 @@ Initial release.
 - **Tooling**: `mix format`, `mix credo --strict` (clean), `mix dialyzer`
   (clean), 78 doctests + 31 unit tests.
 
-[Unreleased]: https://github.com/jeffreybaird/cucumberex/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/jeffreybaird/cucumberex/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jeffreybaird/cucumberex/releases/tag/v0.1.0

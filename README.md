@@ -99,7 +99,7 @@ Add Cucumberex to your `mix.exs` deps:
 ```elixir
 def deps do
   [
-    {:cucumberex, "~> 0.1"}
+    {:cucumberex, "~> 0.2"}
   ]
 end
 ```
