@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-04-23
+
+### Fixed
+
+- ExDoc warnings for missing `LICENSE` and `CLAUDE.md` references in the
+  README. `LICENSE` and `CHANGELOG.md` are now in `docs: [extras: ...]` so
+  they render on hexdocs; the README links to `CLAUDE.md` on GitHub
+  (project-internal convention, not useful to package consumers).
+- ExDoc now configures `:source_url` and `:source_ref`, so code references
+  in the generated docs link back to the tagged version on GitHub.
+
 ## [0.2.0] - 2026-04-23
 
 ### Added
@@ -78,6 +89,7 @@ Initial release.
 - **Tooling**: `mix format`, `mix credo --strict` (clean), `mix dialyzer`
   (clean), 78 doctests + 31 unit tests.
 
-[Unreleased]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/jeffreybaird/cucumberex/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jeffreybaird/cucumberex/releases/tag/v0.1.0
