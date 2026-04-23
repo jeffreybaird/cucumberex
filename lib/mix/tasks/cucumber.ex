@@ -36,7 +36,12 @@ defmodule Mix.Tasks.Cucumber do
       -e, --exclude PATTERN   Exclude files matching pattern
           --snippet-type TYPE  Snippet style: cucumber_expression (default) or regexp
           --version           Show version
-          --init              Initialize project structure
+
+  ## Related tasks
+
+      mix cucumber.init              Scaffold features/ with starter files
+      mix cucumber.gen.feature NAME  Generate a feature file
+      mix cucumber.gen.steps NAME    Generate a step definition module
 
   ## Examples
 
@@ -64,9 +69,6 @@ defmodule Mix.Tasks.Cucumber do
       ["--version" | _] ->
         Mix.shell().info("Cucumberex #{@version}")
         :ok
-
-      ["--init" | _] ->
-        init_project()
 
       ["--i18n-languages" | _] ->
         print_languages()
@@ -124,68 +126,6 @@ defmodule Mix.Tasks.Cucumber do
   defp register_module(mod, config) do
     DSL.load_module(mod, config.step_registry)
     HooksDSL.load_module(mod, config.hook_registry)
-  end
-
-  defp init_project do
-    dirs = ["features", "features/support", "features/step_definitions"]
-
-    Enum.each(dirs, fn dir ->
-      File.mkdir_p!(dir)
-      Mix.shell().info("Created #{dir}/")
-    end)
-
-    support_file = "features/support/env.ex"
-
-    unless File.exists?(support_file) do
-      File.write!(support_file, """
-      # Cucumberex environment setup
-      # This file is loaded before your step definitions.
-
-      # Example: Set up a world factory
-      # Cucumberex.World.Registry.set_factory(fn -> %{db: :ets.new(:world, [:set])} end)
-      """)
-
-      Mix.shell().info("Created #{support_file}")
-    end
-
-    step_file = "features/step_definitions/steps.ex"
-
-    unless File.exists?(step_file) do
-      File.write!(step_file, """
-      defmodule MySteps do
-        use Cucumberex.DSL
-
-        given_ "I have {int} cukes in my belly", fn world, count ->
-          Map.put(world, :cukes, count)
-        end
-
-        then_ "I should have {int} cukes", fn world, expected ->
-          if world.cukes != expected do
-            raise "Expected \#{expected} cukes but got \#{world.cukes}"
-          end
-          world
-        end
-      end
-      """)
-
-      Mix.shell().info("Created #{step_file}")
-    end
-
-    example_feature = "features/example.feature"
-
-    unless File.exists?(example_feature) do
-      File.write!(example_feature, """
-      Feature: Example feature
-
-        Scenario: Basic scenario
-          Given I have 5 cukes in my belly
-          Then I should have 5 cukes
-      """)
-
-      Mix.shell().info("Created #{example_feature}")
-    end
-
-    Mix.shell().info("\nProject initialized! Run: mix cucumber")
   end
 
   defp print_languages do
