@@ -1,0 +1,73 @@
+- generic [ref=e4]:
+  - complementary [ref=e5]:
+    - generic [ref=e7]:
+      - paragraph [ref=e8]: Acme Streaming
+      - paragraph [ref=e9]: operator@acme.test
+    - navigation [ref=e10]:
+      - link "Dashboard" [ref=e11] [cursor=pointer]:
+        - /url: /admin
+      - link "Content" [ref=e12] [cursor=pointer]:
+        - /url: /admin/content
+      - link "Collections" [ref=e13] [cursor=pointer]:
+        - /url: /admin/collections
+      - link "Series" [ref=e14] [cursor=pointer]:
+        - /url: /admin/series
+      - link "Tags" [ref=e15] [cursor=pointer]:
+        - /url: /admin/tags
+      - link "Catalog" [ref=e16] [cursor=pointer]:
+        - /url: /admin/catalog
+      - link "Landing Page" [ref=e17] [cursor=pointer]:
+        - /url: /admin/landing
+      - link "Analytics" [ref=e18] [cursor=pointer]:
+        - /url: /admin/analytics
+      - link "Appearance" [ref=e19] [cursor=pointer]:
+        - /url: /admin/appearance
+      - link "Members" [ref=e20] [cursor=pointer]:
+        - /url: /admin/members
+      - link "Webhooks" [ref=e21] [cursor=pointer]:
+        - /url: /admin/webhooks
+      - link "Settings" [ref=e22] [cursor=pointer]:
+        - /url: /admin/settings
+      - link "Billing" [ref=e23] [cursor=pointer]:
+        - /url: /admin/settings/billing
+      - link "Audit Log" [ref=e24] [cursor=pointer]:
+        - /url: /admin/audit-log
+    - link "Log out" [ref=e26] [cursor=pointer]:
+      - /url: /users/log-out
+  - generic [ref=e27]:
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - heading "Collections" [level=1] [ref=e32]
+            - paragraph [ref=e33]: Group videos, seasons, and series for the viewer catalog.
+          - button "New Collection" [active] [ref=e35]
+        - generic [ref=e37]:
+          - paragraph [ref=e38]: No collections yet
+          - paragraph [ref=e39]: Create your first collection to organize videos.
+      - dialog "New Collection" [ref=e50]:
+        - complementary [ref=e52]:
+          - generic [ref=e53]:
+            - heading "New Collection" [level=2] [ref=e55]
+            - button "Close" [ref=e56]
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - generic [ref=e61]: Title
+              - textbox "Title" [ref=e62]
+            - generic [ref=e63]:
+              - generic [ref=e64]: Description
+              - textbox "Description" [ref=e65]
+            - generic [ref=e67]:
+              - generic [ref=e68]: Cover image
+              - paragraph [ref=e72]: No image yet
+              - generic [ref=e74] [cursor=pointer]:
+                - text: Choose file
+                - button "Choose file" [ref=e76]
+              - paragraph [ref=e77]: JPG, PNG or WebP. Optional.
+          - generic [ref=e78]:
+            - button "Cancel" [ref=e79]
+            - button "Save" [ref=e80]
+    - radiogroup "Theme" [ref=e41]:
+      - button "System theme" [ref=e43] [cursor=pointer]
+      - button "Light theme" [ref=e45] [cursor=pointer]
+      - button "Dark theme" [ref=e47] [cursor=pointer]

@@ -1,0 +1,11 @@
+[     220ms] [INFO] %c📡 [info] GET /admin/tags
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[    1322ms] [LOG] phx-GKkoANlcTmQkpLKG mount:  -  {0: Object, p: Object, s: 21, t: Tags} @ http://localhost:4000/assets/js/app.js:8339
+[   13956ms] [LOG] phx-GKkoANlcTmQkpLKG update:  -  {0: Object} @ http://localhost:4000/assets/js/app.js:8339
+[   14179ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   14183ms] [LOG] phx-GKkoANlcTmQkpLKG update:  -  {0: Object, p: Object} @ http://localhost:4000/assets/js/app.js:8339
+[   14424ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   14425ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828

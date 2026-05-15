@@ -1,0 +1,41 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Bobine" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e6]:
+      - link "Register" [ref=e7] [cursor=pointer]:
+        - /url: /users/register
+      - link "Log in" [ref=e8] [cursor=pointer]:
+        - /url: /users/log-in
+      - radiogroup "Theme" [ref=e9]:
+        - button "System theme" [ref=e11] [cursor=pointer]
+        - button "Light theme" [ref=e13] [cursor=pointer]
+        - button "Dark theme" [ref=e15] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e22]:
+        - heading "Register for an account" [level=1] [ref=e23]
+        - paragraph [ref=e24]:
+          - text: Already registered?
+          - link "Log in" [ref=e25] [cursor=pointer]:
+            - /url: /users/log-in
+          - text: to your account now.
+      - generic [ref=e26]:
+        - generic [ref=e28]:
+          - generic [ref=e29]: Organization name
+          - textbox "Organization name" [active] [ref=e30]
+        - generic [ref=e32]:
+          - generic [ref=e33]: Email
+          - textbox "Email" [ref=e34]
+        - group "Choose a starter theme" [ref=e35]:
+          - generic [ref=e36]: Choose a starter theme
+          - radiogroup "Starter theme" [ref=e37]:
+            - generic [ref=e38] [cursor=pointer]:
+              - radio "Daybreak Bright and minimal with calm blue accents." [ref=e39]
+              - generic [ref=e44]: Daybreak
+              - generic [ref=e45]: Bright and minimal with calm blue accents.
+            - generic [ref=e46] [cursor=pointer]:
+              - radio "Midnight Cinema-dark with bold red accents." [checked] [ref=e47]
+              - generic [ref=e52]: Midnight
+              - generic [ref=e53]: Cinema-dark with bold red accents.
+        - button "Create an account" [ref=e54] [cursor=pointer]

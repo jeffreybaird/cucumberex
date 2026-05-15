@@ -1,0 +1,6 @@
+[     193ms] [INFO] %c📡 [info] GET /admin/collections
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[    1056ms] [LOG] phx-GKkoB-8rBFDeQr7B mount:  -  {0: Object, p: Object, s: 26, t: Collections} @ http://localhost:4000/assets/js/app.js:8339
+[   15879ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   15960ms] [LOG] phx-GKkoB-8rBFDeQr7B update:  -  {0: Object, p: Object} @ http://localhost:4000/assets/js/app.js:8339

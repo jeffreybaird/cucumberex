@@ -1,0 +1,75 @@
+- generic [ref=e44]:
+  - complementary [ref=e45]:
+    - generic [ref=e47]:
+      - paragraph [ref=e48]: Acme Streaming
+      - paragraph [ref=e49]: operator@acme.test
+    - navigation [ref=e50]:
+      - link "Dashboard" [ref=e51] [cursor=pointer]:
+        - /url: /admin
+      - link "Content" [ref=e52] [cursor=pointer]:
+        - /url: /admin/content
+      - link "Collections" [ref=e53] [cursor=pointer]:
+        - /url: /admin/collections
+      - link "Series" [ref=e54] [cursor=pointer]:
+        - /url: /admin/series
+      - link "Tags" [ref=e55] [cursor=pointer]:
+        - /url: /admin/tags
+      - link "Catalog" [ref=e56] [cursor=pointer]:
+        - /url: /admin/catalog
+      - link "Landing Page" [ref=e57] [cursor=pointer]:
+        - /url: /admin/landing
+      - link "Analytics" [ref=e58] [cursor=pointer]:
+        - /url: /admin/analytics
+      - link "Appearance" [ref=e59] [cursor=pointer]:
+        - /url: /admin/appearance
+      - link "Members" [ref=e60] [cursor=pointer]:
+        - /url: /admin/members
+      - link "Webhooks" [ref=e61] [cursor=pointer]:
+        - /url: /admin/webhooks
+      - link "Settings" [ref=e62] [cursor=pointer]:
+        - /url: /admin/settings
+      - link "Billing" [ref=e63] [cursor=pointer]:
+        - /url: /admin/settings/billing
+      - link "Audit Log" [ref=e64] [cursor=pointer]:
+        - /url: /admin/audit-log
+    - link "Log out" [ref=e66] [cursor=pointer]:
+      - /url: /users/log-out
+  - generic [ref=e67]:
+    - main [ref=e68]:
+      - heading "Members" [level=1] [ref=e71]
+      - generic [ref=e72]:
+        - button "Team" [ref=e73]
+        - button "Viewers" [ref=e74]
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - textbox "Search by email or name..." [ref=e77]
+          - generic [ref=e78]:
+            - combobox [ref=e79]:
+              - option "All statuses" [selected]
+              - option "Active"
+              - option "Suspended"
+              - option "Banned"
+            - combobox [ref=e80]:
+              - option "All subscriptions" [selected]
+              - option "Active"
+              - option "Trial"
+              - option "None"
+              - option "Past Due"
+              - option "Canceled"
+        - generic [ref=e81]:
+          - table [ref=e82]:
+            - rowgroup [ref=e83]:
+              - row "Email Display Name Subscription Status Joined Actions" [ref=e84]:
+                - columnheader "Email" [ref=e85]
+                - columnheader "Display Name" [ref=e86]
+                - columnheader "Subscription" [ref=e87]
+                - columnheader "Status" [ref=e88]
+                - columnheader "Joined" [ref=e89]
+                - columnheader "Actions" [ref=e90]:
+                  - generic [ref=e91]: Actions
+            - rowgroup
+          - paragraph [ref=e92]: No viewers found.
+    - radiogroup "Theme" [ref=e94]:
+      - button "System theme" [ref=e96] [cursor=pointer]
+      - button "Light theme" [ref=e98] [cursor=pointer]
+      - button "Dark theme" [ref=e100] [cursor=pointer]

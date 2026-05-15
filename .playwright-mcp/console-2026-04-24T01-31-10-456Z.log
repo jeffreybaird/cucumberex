@@ -1,0 +1,398 @@
+[    2042ms] [LOG] phx-GKkm39GYgH48d9lE mount:  -  {0: Object, p: Object, s: 25} @ http://localhost:4000/assets/js/app.js:8339
+[   22358ms] [LOG] phx-GKkm39GYgH48d9lE update:  -  {0: Object} @ http://localhost:4000/assets/js/app.js:8339
+[   23562ms] [LOG] phx-GKkm39GYgH48d9lE socket: disconnect for page nav -  undefined @ http://localhost:4000/assets/js/app.js:8339
+[   23562ms] [LOG] phx-GKkm39GYgH48d9lE destroyed: the child has been removed from the parent -  undefined @ http://localhost:4000/assets/js/app.js:8339
+[   23663ms] [LOG]  destroyed: the child has been removed from the parent -  undefined @ http://localhost:4000/assets/js/app.js:8339
+[   23715ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24209ms] [INFO] %c📡 [info] POST /users/log-in
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24235ms] [INFO] %c📡 [info] Sent 302 in 32ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24236ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24360ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24406ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24408ms] [INFO] %c📡 [info] Sent 200 in 63ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   24408ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   25710ms] [LOG] phx-GKkm5W-kTNI8d45o mount:  -  {0: Object, p: Object, s: 14, t: Dashboard} @ http://localhost:4000/assets/js/app.js:8339
+[   58560ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58654ms] [INFO] %c📡 [info] Sent 200 in 101ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58655ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58667ms] [INFO] %c📡 [info] Live stream recording asset ready
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58676ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58732ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58740ms] [INFO] %c📡 [info] Sent 200 in 10ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58740ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58754ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[   58754ms] [INFO] %c📡 [info] Live event transitioned to ended
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  330586ms] [INFO] %c📡 [info] GET /events/dev-stream-1776993404
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  330620ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  330620ms] [INFO] %c📡 [info] Sent 200 in 63ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  330620ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  330720ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 15µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "DjNNICMnDBVsYwgBAyBiBwtuKU57HAAHQUyXKvcTAVKUgiRCE_by9yL0", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  330765ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  334330ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  338810ms] [INFO] %c📡 [info] GET /events/dev-stream-1776993404
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  338854ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  338858ms] [INFO] %c📡 [info] Sent 200 in 52ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  338858ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  339029ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 13µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "MCpxPy8fPixjVDQXBw54PXd-c1kAKhRNoLEGGNQmNawCcGHy9O8nBOXz", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  339041ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  339424ms] [ERROR] %c📡 [error] GenServer #PID<0.15407.0> terminating
+** (FunctionClauseError) no function clause matching in BobineWeb.Viewer.LiveEventWatchLive.handle_event/3
+    (bobine 0.1.0) lib/bobine_web/live/viewer/live_event_watch_live.ex:69: BobineWeb.Viewer.LiveEventWatchLive.handle_event("playback_started", %{"video_id" => "51b93add-246b-4618-8105-ccfb6cac2d92"}, #Phoenix.LiveView.Socket<id: "phx-GKknLqV4hXAG6q0F", endpoint: BobineWeb.Endpoint, view: BobineWeb.Viewer.LiveEventWatchLive, parent_pid: nil, root_pid: #PID<0.15407.0>, router: BobineWeb.Router, assigns: %{access: {:ok, :allowed}, current_scope: nil, event: %Bobine.Streaming.LiveEvent{__meta__: #Ecto.Schema.Metadata<:loaded, "live_events">, id: "45a1a3d1-fdea-4a9f-9422-2dff19e87ff4", title: "Dev Live Stream", slug: "dev-stream-1776993404", description: "Created by mix bobine.dev_live_stream.", cover_image_url: nil, scheduled_start_at: ~U[2026-04-24 01:16:44Z], estimated_duration_minutes: nil, access_type: "public", ppv_price_cents: nil, ppv_access_window_hours: 48, status: "ended", mux_live_stream_id: "zxPBnJqifj9SsyUG3k8pCLnG43mgou01OBMPlTexFsfo", mux_live_playback_id: "hOpPqHU8IymX75502pf3WRSdz6nWjIh2PiKk00iby003kQ", mux_rtmp_url: "rtmps://global-live.mux.com:443/app", stripe_product_id: nil, stripe_price_id: nil, went_live_at: ~U[2026-04-24 01:16:45Z], ended_at: ~U[2026-04-24 01:32:09Z], canceled_at: nil, deleted_at: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, recording_video_id: "51b93add-246b-4618-8105-ccfb6cac2d92", recording_video: %Bobine.Content.Video{__meta__: #Ecto.Schema.Metadata<:loaded, "videos">, id: "51b93add-246b-4618-8105-ccfb6cac2d92", title: "Dev Live Stream", slug: "recording-45a1a3d1-fdea-4a9f-9422-2dff19e87ff4", description: nil, mux_asset_id: "yS9R02fMSjOr4fIMbjgw02hpz00Cf9JvqMAygoINhFoGXU", mux_playback_id: "a81H02Df00b6Fe8hYfrOYf2fyqfdVh7Hhgn01mNozEBKco", mux_upload_id: nil, mux_status: "ready", duration: 10.066666666666666, max_resolution: "HD", published: false, visibility: "subscribers_only", custom_thumbnail_url: nil, is_recording: true, ...}, tickets: #Ecto.Association.NotLoaded<association :tickets is not loaded>, chat_messages: #Ecto.Association.NotLoaded<association :chat_messages is not loaded>, reminders: #Ecto.Association.NotLoaded<association :reminders is not loaded>, inserted_at: ~U[2026-04-24 01:16:44Z], updated_at: ~U[2026-04-24 01:32:09Z]}, organization: %Bobine.Accounts.Organization{__meta__: #Ecto.Schema.Metadata<:loaded, "organizations">, id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", name: "Prism+", slug: "prism-plus", custom_domain: nil, stripe_account_id: nil, stripe_connect_account_id: nil, stripe_connect_onboarding_complete: false, stripe_customer_id: nil, template: "default", deleted_at: nil, features: %{"analytics" => true, "drm" => true, "live_streaming" => true}, accent_color_base: "oklch(0.65 0.18 230)", accent_color_hover: "oklch(0.71 0.18 230)", accent_color_active: "oklch(0.59 0.18 230)", accent_color_subtle: "oklch(0.26 0.08 230)", display_font: "DM Serif Display", preset_name: "catalog_cinema", admin_accent_color: nil, themes: #Ecto.Association.NotLoaded<association :themes is not loaded>, memberships: #Ecto.Association.NotLoaded<association :memberships is not loaded>, inserted_at: ~U[2026-04-18 11:17:55Z], updated_at: ~U[2026-04-23 14:33:21Z]}, theme: %Bobine.Branding.Theme{__meta__: #Ecto.Schema.Metadata<:loaded, "themes">, id: "6e8df538-cc1e-4626-bded-427df26bda3e", brand_primary: "#0ea5e9", brand_secondary: "#0284c7", background: "#08090e", surface: "#12141c", elevated: "#1c1e28", text_primary: "#f0f2f8", text_secondary: "#8890a8", text_on_accent: "#ffffff", accent: "#0ea5e9", brand_primary_hover: "#38bdf8", font_heading: "DM Serif Display", font_body: "Inter", border_radius: "0.5rem", card_border_radius: "0.75rem", border_color: "rgba(255, 255, 255, 0.06)", divider_color: "rgba(255, 255, 255, 0.04)", nav_background: "rgba(8, 9, 14, 0.92)", card_background: "#12141c", overlay_color: "rgba(0, 0, 0, 0.75)", logo_url: nil, favicon_url: nil, login_background_image_url: nil, form_text: nil, form_placeholder: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, inserted_at: ~U[2026-04-18 11:33:17Z], updated_at: ~U[2026-04-18 11:33:17Z]}, current_origin: "http://localhost:4000", streams: %{chat_messages: %Phoenix.LiveView.LiveStream{name: :chat_messages, dom_id: #Function<4.100053806/1 in Phoenix.LiveView.LiveStream.new/4>, ref: "0", inserts: [], deletes: [], reset?: false, consumable?: false}, __changed__: MapSet.new([]), __configured__: %{}, __ref__: 1}, base_url: "http://localhost:4000", viewer_banned_from_chat: false, current_path: nil, current_user: nil, impersonating: false, flash: %{}, __changed__: %{}, current_viewer: #Bobine.Viewers.Viewer<__meta__: #Ecto.Schema.Metadata<:loaded, "viewers">, id: "9e69b1f3-8f47-449e-8441-fa401c591b10", organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, email: "alice@prism-plus.demo", display_name: "Alice Demo", avatar_url: nil, confirmed_at: ~U[2026-04-18 14:00:37Z], status: :active, subscription_status: "active", subscription_expires_at: nil, trial_expires_at: nil, stripe_customer_id: nil, onboarding_completed: false, marketing_opt_in: false, metadata: %{}, deleted_at: nil, __impersonating__: false, inserted_at: ~U[2026-04-18 11:33:17Z], updated_at: ~U[2026-04-18 14:00:37Z], ...>, impersonating_viewer: false, current_membership: nil, page_title: "Dev Live Stream", has_reminder: false, chat_input_enabled: false, live_action: nil, chat_open: true}, transport_pid: #PID<0.15398.0>, sticky?: false, ...>)
+    (phoenix_live_view 1.1.28) lib/phoenix_live_view/channel.ex:530: anonymous fn/3 in Phoenix.LiveView.Channel.view_handle_event/3
+    (telemetry 1.4.1) /Users/jeffreybaird/personal-repos/bobine/deps/telemetry/src/telemetry.erl:359: :telemetry.span/3
+    (phoenix_live_view 1.1.28) lib/phoenix_live_view/channel.ex:260: Phoenix.LiveView.Channel.handle_info/2
+    (stdlib 7.1) gen_server.erl:2434: :gen_server.try_handle_info/3
+    (stdlib 7.1) gen_server.erl:2420: :gen_server.handle_msg/3
+    (stdlib 7.1) proc_lib.erl:333: :proc_lib.init_p_do_apply/3
+Process Label: {Phoenix.LiveView, BobineWeb.Viewer.LiveEventWatchLive, "lv:phx-GKknLqV4hXAG6q0F"}
+Last message: %Phoenix.Socket.Message{topic: "lv:phx-GKknLqV4hXAG6q0F", event: "event", payload: %{"event" => "playback_started", "type" => "hook", "value" => %{"video_id" => "51b93add-246b-4618-8105-ccfb6cac2d92"}}, ref: "12", join_ref: "4"}
+State: %{socket: #Phoenix.LiveView.Socket<id: "phx-GKknLqV4hXAG6q0F", endpoint: BobineWeb.Endpoint, view: BobineWeb.Viewer.LiveEventWatchLive, parent_pid: nil, root_pid: #PID<0.15407.0>, router: BobineWeb.Router, assigns: %{access: {:ok, :allowed}, current_scope: nil, event: %Bobine.Streaming.LiveEvent{__meta__: #Ecto.Schema.Metadata<:loaded, "live_events">, id: "45a1a3d1-fdea-4a9f-9422-2dff19e87ff4", title: "Dev Live Stream", slug: "dev-stream-1776993404", description: "Created by mix bobine.dev_live_stream.", cover_image_url: nil, scheduled_start_at: ~U[2026-04-24 01:16:44Z], estimated_duration_minutes: nil, access_type: "public", ppv_price_cents: nil, ppv_access_window_hours: 48, status: "ended", mux_live_stream_id: "zxPBnJqifj9SsyUG3k8pCLnG43mgou01OBMPlTexFsfo", mux_live_playback_id: "hOpPqHU8IymX75502pf3WRSdz6nWjIh2PiKk00iby003kQ", mux_rtmp_url: "rtmps://global-live.mux.com:443/app", stripe_product_id: nil, stripe_price_id: nil, went_live_at: ~U[2026-04-24 01:16:45Z], ended_at: ~U[2026-04-24 01:32:09Z], canceled_at: nil, deleted_at: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, recording_video_id: "51b93add-246b-4618-8105-ccfb6cac2d92", recording_video: %Bobine.Content.Video{__meta__: #Ecto.Schema.Metadata<:loaded, "videos">, id: "51b93add-246b-4618- (truncated)
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  340426ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  363563ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  363586ms] [INFO] %c📡 [info] Sent 200 in 27ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  363587ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  365591ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  365602ms] [INFO] %c📡 [info] Sent 200 in 14ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  365603ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  365894ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  365912ms] [INFO] %c📡 [info] Sent 200 in 19ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  365913ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  369891ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  369926ms] [INFO] %c📡 [info] Sent 200 in 37ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  369927ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  371316ms] [ERROR] %c📡 [error] GenServer #PID<0.15418.0> terminating
+** (FunctionClauseError) no function clause matching in BobineWeb.Viewer.LiveEventWatchLive.handle_event/3
+    (bobine 0.1.0) lib/bobine_web/live/viewer/live_event_watch_live.ex:69: BobineWeb.Viewer.LiveEventWatchLive.handle_event("playback_progress", %{"position" => 28.745184, "video_id" => "51b93add-246b-4618-8105-ccfb6cac2d92"}, #Phoenix.LiveView.Socket<id: "phx-GKknLqV4hXAG6q0F", endpoint: BobineWeb.Endpoint, view: BobineWeb.Viewer.LiveEventWatchLive, parent_pid: nil, root_pid: #PID<0.15418.0>, router: BobineWeb.Router, assigns: %{access: {:ok, :allowed}, current_scope: nil, event: %Bobine.Streaming.LiveEvent{__meta__: #Ecto.Schema.Metadata<:loaded, "live_events">, id: "45a1a3d1-fdea-4a9f-9422-2dff19e87ff4", title: "Dev Live Stream", slug: "dev-stream-1776993404", description: "Created by mix bobine.dev_live_stream.", cover_image_url: nil, scheduled_start_at: ~U[2026-04-24 01:16:44Z], estimated_duration_minutes: nil, access_type: "public", ppv_price_cents: nil, ppv_access_window_hours: 48, status: "ended", mux_live_stream_id: "zxPBnJqifj9SsyUG3k8pCLnG43mgou01OBMPlTexFsfo", mux_live_playback_id: "hOpPqHU8IymX75502pf3WRSdz6nWjIh2PiKk00iby003kQ", mux_rtmp_url: "rtmps://global-live.mux.com:443/app", stripe_product_id: nil, stripe_price_id: nil, went_live_at: ~U[2026-04-24 01:16:45Z], ended_at: ~U[2026-04-24 01:32:09Z], canceled_at: nil, deleted_at: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, recording_video_id: "51b93add-246b-4618-8105-ccfb6cac2d92", recording_video: %Bobine.Content.Video{__meta__: #Ecto.Schema.Metadata<:loaded, "videos">, id: "51b93add-246b-4618-8105-ccfb6cac2d92", title: "Dev Live Stream", slug: "recording-45a1a3d1-fdea-4a9f-9422-2dff19e87ff4", description: nil, mux_asset_id: "yS9R02fMSjOr4fIMbjgw02hpz00Cf9JvqMAygoINhFoGXU", mux_playback_id: "a81H02Df00b6Fe8hYfrOYf2fyqfdVh7Hhgn01mNozEBKco", mux_upload_id: nil, mux_status: "ready", duration: 10.066666666666666, max_resolution: "HD", published: false, visibility: "subscribers_only", custom_thumbnail_url: nil, is_recording: true, ...}, tickets: #Ecto.Association.NotLoaded<association :tickets is not loaded>, chat_messages: #Ecto.Association.NotLoaded<association :chat_messages is not loaded>, reminders: #Ecto.Association.NotLoaded<association :reminders is not loaded>, inserted_at: ~U[2026-04-24 01:16:44Z], updated_at: ~U[2026-04-24 01:32:09Z]}, organization: %Bobine.Accounts.Organization{__meta__: #Ecto.Schema.Metadata<:loaded, "organizations">, id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", name: "Prism+", slug: "prism-plus", custom_domain: nil, stripe_account_id: nil, stripe_connect_account_id: nil, stripe_connect_onboarding_complete: false, stripe_customer_id: nil, template: "default", deleted_at: nil, features: %{"analytics" => true, "drm" => true, "live_streaming" => true}, accent_color_base: "oklch(0.65 0.18 230)", accent_color_hover: "oklch(0.71 0.18 230)", accent_color_active: "oklch(0.59 0.18 230)", accent_color_subtle: "oklch(0.26 0.08 230)", display_font: "DM Serif Display", preset_name: "catalog_cinema", admin_accent_color: nil, themes: #Ecto.Association.NotLoaded<association :themes is not loaded>, memberships: #Ecto.Association.NotLoaded<association :memberships is not loaded>, inserted_at: ~U[2026-04-18 11:17:55Z], updated_at: ~U[2026-04-23 14:33:21Z]}, theme: %Bobine.Branding.Theme{__meta__: #Ecto.Schema.Metadata<:loaded, "themes">, id: "6e8df538-cc1e-4626-bded-427df26bda3e", brand_primary: "#0ea5e9", brand_secondary: "#0284c7", background: "#08090e", surface: "#12141c", elevated: "#1c1e28", text_primary: "#f0f2f8", text_secondary: "#8890a8", text_on_accent: "#ffffff", accent: "#0ea5e9", brand_primary_hover: "#38bdf8", font_heading: "DM Serif Display", font_body: "Inter", border_radius: "0.5rem", card_border_radius: "0.75rem", border_color: "rgba(255, 255, 255, 0.06)", divider_color: "rgba(255, 255, 255, 0.04)", nav_background: "rgba(8, 9, 14, 0.92)", card_background: "#12141c", overlay_color: "rgba(0, 0, 0, 0.75)", logo_url: nil, favicon_url: nil, login_background_image_url: nil, form_text: nil, form_placeholder: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, inserted_at: ~U[2026-04-18 11:33:17Z], updated_at: ~U[2026-04-18 11:33:17Z]}, current_origin: "http://localhost:4000", streams: %{chat_messages: %Phoenix.LiveView.LiveStream{name: :chat_messages, dom_id: #Function<4.100053806/1 in Phoenix.LiveView.LiveStream.new/4>, ref: "0", inserts: [], deletes: [], reset?: false, consumable?: false}, __changed__: MapSet.new([]), __configured__: %{}, __ref__: 1}, base_url: "http://localhost:4000", viewer_banned_from_chat: false, current_path: nil, current_user: nil, impersonating: false, flash: %{}, __changed__: %{}, current_viewer: #Bobine.Viewers.Viewer<__meta__: #Ecto.Schema.Metadata<:loaded, "viewers">, id: "9e69b1f3-8f47-449e-8441-fa401c591b10", organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, email: "alice@prism-plus.demo", display_name: "Alice Demo", avatar_url: nil, confirmed_at: ~U[2026-04-18 14:00:37Z], status: :active, subscription_status: "active", subscription_expires_at: nil, trial_expires_at: nil, stripe_customer_id: nil, onboarding_completed: false, marketing_opt_in: false, metadata: %{}, deleted_at: nil, __impersonating__: false, inserted_at: ~U[2026-04-18 11:33:17Z], updated_at: ~U[2026-04-18 14:00:37Z], ...>, impersonating_viewer: false, current_membership: nil, page_title: "Dev Live Stream", has_reminder: false, chat_input_enabled: false, live_action: nil, chat_open: true}, transport_pid: #PID<0.15398.0>, sticky?: false, ...>)
+    (phoenix_live_view 1.1.28) lib/phoenix_live_view/channel.ex:530: anonymous fn/3 in Phoenix.LiveView.Channel.view_handle_event/3
+    (telemetry 1.4.1) /Users/jeffreybaird/personal-repos/bobine/deps/telemetry/src/telemetry.erl:359: :telemetry.span/3
+    (phoenix_live_view 1.1.28) lib/phoenix_live_view/channel.ex:260: Phoenix.LiveView.Channel.handle_info/2
+    (stdlib 7.1) gen_server.erl:2434: :gen_server.try_handle_info/3
+    (stdlib 7.1) gen_server.erl:2420: :gen_server.handle_msg/3
+    (stdlib 7.1) proc_lib.erl:333: :proc_lib.init_p_do_apply/3
+Process Label: {Phoenix.LiveView, BobineWeb.Viewer.LiveEventWatchLive, "lv:phx-GKknLqV4hXAG6q0F"}
+Last message: %Phoenix.Socket.Message{topic: "lv:phx-GKknLqV4hXAG6q0F", event: "event", payload: %{"event" => "playback_progress", "type" => "hook", "value" => %{"position" => 28.745184, "video_id" => "51b93add-246b-4618-8105-ccfb6cac2d92"}}, ref: "15", join_ref: "13"}
+State: %{socket: #Phoenix.LiveView.Socket<id: "phx-GKknLqV4hXAG6q0F", endpoint: BobineWeb.Endpoint, view: BobineWeb.Viewer.LiveEventWatchLive, parent_pid: nil, root_pid: #PID<0.15418.0>, router: BobineWeb.Router, assigns: %{access: {:ok, :allowed}, current_scope: nil, event: %Bobine.Streaming.LiveEvent{__meta__: #Ecto.Schema.Metadata<:loaded, "live_events">, id: "45a1a3d1-fdea-4a9f-9422-2dff19e87ff4", title: "Dev Live Stream", slug: "dev-stream-1776993404", description: "Created by mix bobine.dev_live_stream.", cover_image_url: nil, scheduled_start_at: ~U[2026-04-24 01:16:44Z], estimated_duration_minutes: nil, access_type: "public", ppv_price_cents: nil, ppv_access_window_hours: 48, status: "ended", mux_live_stream_id: "zxPBnJqifj9SsyUG3k8pCLnG43mgou01OBMPlTexFsfo", mux_live_playback_id: "hOpPqHU8IymX75502pf3WRSdz6nWjIh2PiKk00iby003kQ", mux_rtmp_url: "rtmps://global-live.mux.com:443/app", stripe_product_id: nil, stripe_price_id: nil, went_live_at: ~U[2026-04-24 01:16:45Z], ended_at: ~U[2026-04-24 01:32:09Z], canceled_at: nil, deleted_at: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, recording_video_id: "51b93add-246b-4618-8105-ccfb6cac2d92", recording_video: %Bobine.Content.Video{__meta__: #Ecto.Schema. (truncated)
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  372366ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  376737ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  376750ms] [INFO] %c📡 [info] Sent 200 in 17ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  376750ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  376849ms] [INFO] %c📡 [info] POST /webhooks/mux
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  376859ms] [INFO] %c📡 [info] Sent 200 in 13ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  376860ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  382467ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  382532ms] [INFO] %c📡 [info] Sent 200 in 70ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  382533ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  392261ms] [INFO] %c📡 [info] GET /events/dev-stream-1776994631
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  392298ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  392301ms] [INFO] %c📡 [info] Sent 200 in 44ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  392302ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  392460ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 19µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "Cih9MjA8BhR5BTk5FDt-HAcHe0M1Kgt2UNIJXmiUT0zmprNXI60twOGA", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  392502ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  429650ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  429710ms] [INFO] %c📡 [info] Sent 200 in 62ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  429710ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496000ms] [INFO] %c📡 [info] GET /events/dev-stream-1776994631
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496032ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496036ms] [INFO] %c📡 [info] Sent 200 in 41ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496036ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496152ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 14µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "ED4GTDAeDS51QSh5JgN1DT9iLl4oXBpZOX24XOboXtk-BJEIqSeij9Vn", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496175ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496341ms] [INFO] %c📡 [info] GET /events/dev-stream-1776994631
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496375ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496377ms] [INFO] %c📡 [info] Sent 200 in 39ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496377ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496476ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 12µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "PgBXEQtpOnVPAXcAKR9cCSpUAU0NFCcFafcic8U4b44TMVlMdeJzOqk2", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  496488ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  500008ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  500023ms] [INFO] %c📡 [info] Sent 200 in 19ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  500023ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  501413ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  501431ms] [INFO] %c📡 [info] Sent 200 in 21ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  501432ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502812ms] [INFO] %c📡 [info] GET /events/dev-stream-1776994631
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502842ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502842ms] [INFO] %c📡 [info] Sent 200 in 32ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502842ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502884ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 13µs
+  Transport: :longpoll
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "PgBXEQtpOnVPAXcAKR9cCSpUAU0NFCcFafcic8U4b44TMVlMdeJzOqk2", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502976ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 16µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "NxF4FDgzDBVoWRMXSRF-CTxIBVMWLAFVhwLlPbcTElPC-XNMryNdTIMb", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  502988ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532445ms] [INFO] %c📡 [info] GET /events/dev-stream-1776994631
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532499ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532499ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532507ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532520ms] [INFO] %c📡 [info] Sent 200 in 82ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532520ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532552ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532554ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532559ms] [INFO] %c📡 [info] Sent 200 in 59ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532559ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532560ms] [INFO] %c📡 [info] Sent 200 in 60ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  532560ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  534769ms] [LOG] phx-GKknW777Skqad92k mount:  -  {0: Object, p: Object, s: 14, t: Dashboard} @ http://localhost:4000/assets/js/app.js:8339
+[  646017ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  646045ms] [INFO] %c📡 [info] Sent 200 in 62ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  646045ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  647028ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  647044ms] [INFO] %c📡 [info] Sent 200 in 19ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  647044ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  741582ms] [INFO] %c📡 [info] GET /events/dev-stream-1776994631
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  741647ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  741650ms] [INFO] %c📡 [info] Sent 200 in 80ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  741650ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  741850ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 12µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "aAAEQTkUOw1sTwkXKXtUFQZHBANwLXVV7f09QETLAzJCM2dQHvO42H9b", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  741883ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  743713ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  743730ms] [INFO] %c📡 [info] Sent 200 in 20ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  743730ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  830191ms] [INFO] %c📡 [info] DropOffAggregator processed rows
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898461ms] [INFO] %c📡 [info] GET /users/log-in
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898461ms] [INFO] %c📡 [info] GET /events
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898487ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898494ms] [INFO] %c📡 [info] Sent 200 in 40ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898494ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898668ms] [INFO] %c📡 [info] Sent 200 in 214ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898670ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898757ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898784ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898887ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898887ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898899ms] [INFO] %c📡 [info] Sent 200 in 141ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898899ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898902ms] [INFO] %c📡 [info] Sent 200 in 118ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  898902ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  900962ms] [LOG] phx-GKknsQn6pyjZ8MKj mount:  -  {0: Object, p: Object, s: 14, t: Dashboard} @ http://localhost:4000/assets/js/app.js:8339
+[  904480ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904515ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904517ms] [INFO] %c📡 [info] Sent 200 in 42ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904517ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904563ms] [INFO] %c📡 [info] GET /admin
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904580ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904582ms] [INFO] %c📡 [info] Sent 200 in 20ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  904583ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  905173ms] [LOG] phx-GKknsl9dNcseBbsl mount:  -  {0: Object, p: Object, s: 14, t: Dashboard} @ http://localhost:4000/assets/js/app.js:8339
+[  905674ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  905947ms] [INFO] %c📡 [info] GET /users/log-in
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  905950ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  905956ms] [INFO] %c📡 [info] Sent 200 in 17ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  905956ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  906362ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 13µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "GgBxD14WBisADQgQIQVeDBl3OmUOJgdfEfEw6Gij-8KDELnHWFqRLCKh", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  906363ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  906539ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 14µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "NTBDJwI-WwhPfgc3HR1FEj9Df3UsDX1TjVw_jo4IbKDcyTuVqr4Bnh1d", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  906541ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  934431ms] [INFO] %c📡 [info] GET /events/test-stream
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  934470ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  934472ms] [INFO] %c📡 [info] Sent 200 in 122ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  934472ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  934614ms] [INFO] %c📡 [info] CONNECTED TO Phoenix.LiveView.Socket in 14µs
+  Transport: :websocket
+  Serializer: Phoenix.Socket.V2.JSONSerializer
+  Parameters: %{"_csrf_token" => "MTJwNQwfKBBfWSkFPCZDGxkGeVgJUiMEnTDMdNGQrljQXos_W72oK7o3", "_live_referer" => "undefined", "_mount_attempts" => "0", "_mounts" => "0", "_track_static" => %{"0" => "http://localhost:4000/assets/css/app.css", "1" => "http://localhost:4000/assets/js/app.js"}, "vsn" => "2.0.0"}
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  934628ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  938113ms] [ERROR] %c📡 [error] GenServer #PID<0.16294.0> terminating
+** (FunctionClauseError) no function clause matching in BobineWeb.Viewer.LiveEventWatchLive.handle_event/3
+    (bobine 0.1.0) lib/bobine_web/live/viewer/live_event_watch_live.ex:69: BobineWeb.Viewer.LiveEventWatchLive.handle_event("playback_started", %{"video_id" => "d9f05850-c3f0-44e0-91fe-53000b3c75be"}, #Phoenix.LiveView.Socket<id: "phx-GKknuU6prJ_aF7DG", endpoint: BobineWeb.Endpoint, view: BobineWeb.Viewer.LiveEventWatchLive, parent_pid: nil, root_pid: #PID<0.16294.0>, router: BobineWeb.Router, assigns: %{access: {:ok, :allowed}, current_scope: nil, event: %Bobine.Streaming.LiveEvent{__meta__: #Ecto.Schema.Metadata<:loaded, "live_events">, id: "b9ce08f0-8752-4a8f-a042-a4f47ccb4e15", title: "Test Stream", slug: "test-stream", description: "A stream for testing", cover_image_url: nil, scheduled_start_at: ~U[2026-04-23 15:52:00Z], estimated_duration_minutes: 300, access_type: "public", ppv_price_cents: nil, ppv_access_window_hours: 48, status: "ended", mux_live_stream_id: "ROGCfipycvgdEeoo0039YC9tCGpXdzd200Gwl902UDRJKA", mux_live_playback_id: "TfNV4zdFzZajmFWYv1gCLdLIlBXzABvTy5wIfEp3lr8", mux_rtmp_url: "rtmps://global-live.mux.com:443/app", stripe_product_id: nil, stripe_price_id: nil, went_live_at: ~U[2026-04-23 20:07:53Z], ended_at: ~U[2026-04-24 01:13:01Z], canceled_at: nil, deleted_at: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, recording_video_id: "d9f05850-c3f0-44e0-91fe-53000b3c75be", recording_video: %Bobine.Content.Video{__meta__: #Ecto.Schema.Metadata<:loaded, "videos">, id: "d9f05850-c3f0-44e0-91fe-53000b3c75be", title: "Test Stream", slug: "recording-b9ce08f0-8752-4a8f-a042-a4f47ccb4e15", description: nil, mux_asset_id: "ePKI00UUedhZWPsKU101JoWOCDpqEbL3QYw8RdhkGeCvY", mux_playback_id: "fWPIhcRn4xtfJA02Uldziod014nIrFTBLPZa8dvmEgf01U", mux_upload_id: nil, mux_status: "ready", duration: 10.066666666666666, max_resolution: "HD", published: false, visibility: "subscribers_only", custom_thumbnail_url: nil, is_recording: true, ...}, tickets: #Ecto.Association.NotLoaded<association :tickets is not loaded>, chat_messages: #Ecto.Association.NotLoaded<association :chat_messages is not loaded>, reminders: #Ecto.Association.NotLoaded<association :reminders is not loaded>, inserted_at: ~U[2026-04-23 19:53:21Z], updated_at: ~U[2026-04-24 01:13:01Z]}, organization: %Bobine.Accounts.Organization{__meta__: #Ecto.Schema.Metadata<:loaded, "organizations">, id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", name: "Prism+", slug: "prism-plus", custom_domain: nil, stripe_account_id: nil, stripe_connect_account_id: nil, stripe_connect_onboarding_complete: false, stripe_customer_id: nil, template: "default", deleted_at: nil, features: %{"analytics" => true, "drm" => true, "live_streaming" => true}, accent_color_base: "oklch(0.65 0.18 230)", accent_color_hover: "oklch(0.71 0.18 230)", accent_color_active: "oklch(0.59 0.18 230)", accent_color_subtle: "oklch(0.26 0.08 230)", display_font: "DM Serif Display", preset_name: "catalog_cinema", admin_accent_color: nil, themes: #Ecto.Association.NotLoaded<association :themes is not loaded>, memberships: #Ecto.Association.NotLoaded<association :memberships is not loaded>, inserted_at: ~U[2026-04-18 11:17:55Z], updated_at: ~U[2026-04-23 14:33:21Z]}, theme: %Bobine.Branding.Theme{__meta__: #Ecto.Schema.Metadata<:loaded, "themes">, id: "6e8df538-cc1e-4626-bded-427df26bda3e", brand_primary: "#0ea5e9", brand_secondary: "#0284c7", background: "#08090e", surface: "#12141c", elevated: "#1c1e28", text_primary: "#f0f2f8", text_secondary: "#8890a8", text_on_accent: "#ffffff", accent: "#0ea5e9", brand_primary_hover: "#38bdf8", font_heading: "DM Serif Display", font_body: "Inter", border_radius: "0.5rem", card_border_radius: "0.75rem", border_color: "rgba(255, 255, 255, 0.06)", divider_color: "rgba(255, 255, 255, 0.04)", nav_background: "rgba(8, 9, 14, 0.92)", card_background: "#12141c", overlay_color: "rgba(0, 0, 0, 0.75)", logo_url: nil, favicon_url: nil, login_background_image_url: nil, form_text: nil, form_placeholder: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, inserted_at: ~U[2026-04-18 11:33:17Z], updated_at: ~U[2026-04-18 11:33:17Z]}, current_origin: "http://localhost:4000", streams: %{chat_messages: %Phoenix.LiveView.LiveStream{name: :chat_messages, dom_id: #Function<4.100053806/1 in Phoenix.LiveView.LiveStream.new/4>, ref: "0", inserts: [], deletes: [], reset?: false, consumable?: false}, __changed__: MapSet.new([]), __configured__: %{}, __ref__: 1}, base_url: "http://localhost:4000", viewer_banned_from_chat: false, current_path: nil, current_user: nil, impersonating: false, flash: %{}, __changed__: %{}, current_viewer: #Bobine.Viewers.Viewer<__meta__: #Ecto.Schema.Metadata<:loaded, "viewers">, id: "9e69b1f3-8f47-449e-8441-fa401c591b10", organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, email: "alice@prism-plus.demo", display_name: "Alice Demo", avatar_url: nil, confirmed_at: ~U[2026-04-18 14:00:37Z], status: :active, subscription_status: "active", subscription_expires_at: nil, trial_expires_at: nil, stripe_customer_id: nil, onboarding_completed: false, marketing_opt_in: false, metadata: %{}, deleted_at: nil, __impersonating__: false, inserted_at: ~U[2026-04-18 11:33:17Z], updated_at: ~U[2026-04-18 14:00:37Z], ...>, impersonating_viewer: false, current_membership: nil, page_title: "Test Stream", has_reminder: false, chat_input_enabled: false, live_action: nil, chat_open: true}, transport_pid: #PID<0.16285.0>, sticky?: false, ...>)
+    (phoenix_live_view 1.1.28) lib/phoenix_live_view/channel.ex:530: anonymous fn/3 in Phoenix.LiveView.Channel.view_handle_event/3
+    (telemetry 1.4.1) /Users/jeffreybaird/personal-repos/bobine/deps/telemetry/src/telemetry.erl:359: :telemetry.span/3
+    (phoenix_live_view 1.1.28) lib/phoenix_live_view/channel.ex:260: Phoenix.LiveView.Channel.handle_info/2
+    (stdlib 7.1) gen_server.erl:2434: :gen_server.try_handle_info/3
+    (stdlib 7.1) gen_server.erl:2420: :gen_server.handle_msg/3
+    (stdlib 7.1) proc_lib.erl:333: :proc_lib.init_p_do_apply/3
+Process Label: {Phoenix.LiveView, BobineWeb.Viewer.LiveEventWatchLive, "lv:phx-GKknuU6prJ_aF7DG"}
+Last message: %Phoenix.Socket.Message{topic: "lv:phx-GKknuU6prJ_aF7DG", event: "event", payload: %{"event" => "playback_started", "type" => "hook", "value" => %{"video_id" => "d9f05850-c3f0-44e0-91fe-53000b3c75be"}}, ref: "12", join_ref: "4"}
+State: %{socket: #Phoenix.LiveView.Socket<id: "phx-GKknuU6prJ_aF7DG", endpoint: BobineWeb.Endpoint, view: BobineWeb.Viewer.LiveEventWatchLive, parent_pid: nil, root_pid: #PID<0.16294.0>, router: BobineWeb.Router, assigns: %{access: {:ok, :allowed}, current_scope: nil, event: %Bobine.Streaming.LiveEvent{__meta__: #Ecto.Schema.Metadata<:loaded, "live_events">, id: "b9ce08f0-8752-4a8f-a042-a4f47ccb4e15", title: "Test Stream", slug: "test-stream", description: "A stream for testing", cover_image_url: nil, scheduled_start_at: ~U[2026-04-23 15:52:00Z], estimated_duration_minutes: 300, access_type: "public", ppv_price_cents: nil, ppv_access_window_hours: 48, status: "ended", mux_live_stream_id: "ROGCfipycvgdEeoo0039YC9tCGpXdzd200Gwl902UDRJKA", mux_live_playback_id: "TfNV4zdFzZajmFWYv1gCLdLIlBXzABvTy5wIfEp3lr8", mux_rtmp_url: "rtmps://global-live.mux.com:443/app", stripe_product_id: nil, stripe_price_id: nil, went_live_at: ~U[2026-04-23 20:07:53Z], ended_at: ~U[2026-04-24 01:13:01Z], canceled_at: nil, deleted_at: nil, organization_id: "cefde7db-6ac9-4e8a-8e24-93462fe6a142", organization: #Ecto.Association.NotLoaded<association :organization is not loaded>, recording_video_id: "d9f05850-c3f0-44e0-91fe-53000b3c75be", recording_video: %Bobine.Content.Video{__meta__: #Ecto.Schema.Metadata<:loaded, "videos">, id: "d9f05850-c3f0-44e0-91fe-53000b3c75be", title: "Test Stream", slug: "recording-b9ce08f0-8752-4a (truncated)
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[  939127ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[ 1004130ms] [LOG] phx-GKknsl9dNcseBbsl destroyed: the child has been removed from the parent -  undefined @ http://localhost:4000/assets/js/app.js:8339
+[ 1004317ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[ 1004327ms] [LOG] phx-GKknsl9dNcseBbsl mount:  -  {0: Object, p: Object, s: 19, t: Members} @ http://localhost:4000/assets/js/app.js:8339
+[ 1016187ms] [LOG] phx-GKknsl9dNcseBbsl update:  -  {0: Object, p: Object} @ http://localhost:4000/assets/js/app.js:8339
+[ 1016582ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828

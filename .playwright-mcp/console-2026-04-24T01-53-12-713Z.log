@@ -1,0 +1,9 @@
+[     245ms] [INFO] %c📡 [info] GET /admin/content
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[     277ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[     279ms] [INFO] %c📡 [info] Sent 200 in 38ms
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[     279ms] [INFO] %c📡 [info] metric
+ color: inherit; @ http://localhost:4000/phoenix/live_reload/frame:1828
+[    1214ms] [LOG] phx-GKkoE67SSoNvRb3F mount:  -  {0: Object, p: Object, s: 27, t: Content} @ http://localhost:4000/assets/js/app.js:8339

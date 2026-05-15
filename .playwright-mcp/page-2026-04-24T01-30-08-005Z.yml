@@ -1,0 +1,45 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - link "Bobine" [ref=e6] [cursor=pointer]:
+      - /url: /
+    - navigation [ref=e7]:
+      - link "Log in" [ref=e8] [cursor=pointer]:
+        - /url: /users/log-in
+      - link "Get started" [ref=e9] [cursor=pointer]:
+        - /url: /users/register
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - heading "Launch your own streaming platform" [level=1] [ref=e13]
+      - paragraph [ref=e14]: Bobine gives creators and businesses everything they need to publish, monetize, and grow a branded video streaming service — no engineering team required.
+      - generic [ref=e15]:
+        - link "Start for free" [ref=e16] [cursor=pointer]:
+          - /url: /users/register
+        - link "Log in" [ref=e17] [cursor=pointer]:
+          - /url: /users/log-in
+    - generic [ref=e19]:
+      - heading "Everything you need to run a streaming service" [level=2] [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - heading "Professional Video" [level=3] [ref=e25]
+          - paragraph [ref=e26]: Upload once and deliver adaptive bitrate streams worldwide, powered by Mux.
+        - generic [ref=e27]:
+          - heading "Built-in Monetization" [level=3] [ref=e30]
+          - paragraph [ref=e31]: Offer subscriptions and manage payments with Stripe — no custom integration needed.
+        - generic [ref=e32]:
+          - heading "Your Brand, Your Rules" [level=3] [ref=e35]
+          - paragraph [ref=e36]: Custom domains, logos, colors, and templates so viewers see your brand, not ours.
+        - generic [ref=e37]:
+          - heading "Audience Analytics" [level=3] [ref=e40]
+          - paragraph [ref=e41]: Understand what your viewers watch, how long they stay, and what drives growth.
+        - generic [ref=e42]:
+          - heading "Team Management" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Invite editors, support staff, and admins with granular role-based permissions.
+        - generic [ref=e47]:
+          - heading "Launch Fast" [level=3] [ref=e50]
+          - paragraph [ref=e51]: Go from zero to a live streaming site in minutes, not months.
+    - generic [ref=e53]:
+      - heading "Ready to build your streaming platform?" [level=2] [ref=e54]
+      - paragraph [ref=e55]: Join creators and businesses already using Bobine to reach their audience.
+      - link "Get started for free" [ref=e56] [cursor=pointer]:
+        - /url: /users/register
+  - contentinfo [ref=e57]: © 2026 Bobine. All rights reserved.

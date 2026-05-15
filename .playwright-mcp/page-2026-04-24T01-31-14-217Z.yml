@@ -1,0 +1,20 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Bobine" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e6]:
+      - link "Register" [ref=e7] [cursor=pointer]:
+        - /url: /users/register
+      - link "Log in" [ref=e8] [cursor=pointer]:
+        - /url: /users/log-in
+      - radiogroup "Theme" [ref=e9]:
+        - button "System theme" [ref=e11] [cursor=pointer]
+        - button "Light theme" [ref=e13] [cursor=pointer]
+        - button "Dark theme" [ref=e15] [cursor=pointer]
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - heading "Welcome operator@acme.test" [level=1] [ref=e23]
+      - generic [ref=e24]:
+        - button "Confirm and stay logged in" [active] [ref=e25] [cursor=pointer]
+        - button "Confirm and log in only this time" [ref=e26] [cursor=pointer]
+      - paragraph [ref=e27]: "Tip: If you prefer passwords, you can enable them in the user settings."

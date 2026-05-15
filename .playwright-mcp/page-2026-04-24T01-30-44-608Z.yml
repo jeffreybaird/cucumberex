@@ -1,0 +1,53 @@
+- generic [ref=e56]:
+  - banner [ref=e57]:
+    - link "Bobine" [ref=e59] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e60]:
+      - link "Register" [ref=e61] [cursor=pointer]:
+        - /url: /users/register
+      - link "Log in" [ref=e62] [cursor=pointer]:
+        - /url: /users/log-in
+      - radiogroup "Theme" [ref=e63]:
+        - button "System theme" [ref=e65] [cursor=pointer]
+        - button "Light theme" [ref=e67] [cursor=pointer]
+        - button "Dark theme" [ref=e69] [cursor=pointer]
+  - main [ref=e71]:
+    - generic [ref=e73]:
+      - generic [ref=e76]:
+        - heading "Log in" [level=1] [ref=e77]:
+          - paragraph [ref=e78]: Log in
+        - paragraph [ref=e79]:
+          - text: Don't have an account?
+          - link "Sign up" [ref=e80] [cursor=pointer]:
+            - /url: /users/register
+          - text: for an account now.
+      - generic [ref=e83]:
+        - paragraph [ref=e84]: You are running the local mail adapter.
+        - paragraph [ref=e85]:
+          - text: To see sent emails, visit
+          - link "the mailbox page" [ref=e86] [cursor=pointer]:
+            - /url: /dev/mailbox
+          - text: .
+      - generic [ref=e87]:
+        - generic [ref=e89]:
+          - generic [ref=e90]: Email
+          - textbox "Email" [active] [ref=e91]
+        - button "Log in with email" [ref=e92] [cursor=pointer]:
+          - text: Log in with email
+          - generic [ref=e93]: →
+      - generic [ref=e94]: or
+      - generic [ref=e95]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: Email
+          - textbox "Email" [ref=e99]
+        - generic [ref=e101]:
+          - generic [ref=e102]: Password
+          - textbox "Password" [ref=e103]
+        - button "Log in and stay logged in" [ref=e104] [cursor=pointer]:
+          - text: Log in and stay logged in
+          - generic [ref=e105]: →
+        - button "Log in only this time" [ref=e106] [cursor=pointer]
+  - alert [ref=e107]:
+    - generic [ref=e108]:
+      - paragraph [ref=e111]: An email was sent to operator@acme.test, please access it to confirm your account.
+      - button "close" [ref=e112] [cursor=pointer]

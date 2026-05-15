@@ -1,0 +1,46 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - link "Bobine" [ref=e5] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e6]:
+      - generic [ref=e7]: operator@acme.test
+      - link "Settings" [ref=e8] [cursor=pointer]:
+        - /url: /users/settings
+      - link "Log out" [ref=e9] [cursor=pointer]:
+        - /url: /users/log-out
+      - radiogroup "Theme" [ref=e10]:
+        - button "System theme" [ref=e12] [cursor=pointer]
+        - button "Light theme" [ref=e14] [cursor=pointer]
+        - button "Dark theme" [ref=e16] [cursor=pointer]
+  - main [ref=e18]:
+    - generic [ref=e20]:
+      - generic [ref=e23]:
+        - heading "Log in" [level=1] [ref=e24]:
+          - paragraph [ref=e25]: Log in
+        - paragraph [ref=e26]: You need to reauthenticate to perform sensitive actions on your account.
+      - generic [ref=e29]:
+        - paragraph [ref=e30]: You are running the local mail adapter.
+        - paragraph [ref=e31]:
+          - text: To see sent emails, visit
+          - link "the mailbox page" [ref=e32] [cursor=pointer]:
+            - /url: /dev/mailbox
+          - text: .
+      - generic [ref=e33]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: Email
+          - textbox "Email" [active] [ref=e37]: operator@acme.test
+        - button "Log in with email" [ref=e38] [cursor=pointer]:
+          - text: Log in with email
+          - generic [ref=e39]: →
+      - generic [ref=e40]: or
+      - generic [ref=e41]:
+        - generic [ref=e43]:
+          - generic [ref=e44]: Email
+          - textbox "Email" [ref=e45]: operator@acme.test
+        - generic [ref=e47]:
+          - generic [ref=e48]: Password
+          - textbox "Password" [ref=e49]
+        - button "Log in and stay logged in" [ref=e50] [cursor=pointer]:
+          - text: Log in and stay logged in
+          - generic [ref=e51]: →
+        - button "Log in only this time" [ref=e52] [cursor=pointer]

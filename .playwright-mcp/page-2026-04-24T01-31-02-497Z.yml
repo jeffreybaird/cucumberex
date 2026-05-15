@@ -1,0 +1,62 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - heading "Mailbox" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 5 message(s)
+    - generic [ref=e8]:
+      - link "Bobine Confirmation instructions" [ref=e9] [cursor=pointer]:
+        - /url: /dev/mailbox/0373948d7dab7614737e583c482515ea
+        - generic [ref=e10]: Bobine
+        - paragraph [ref=e11]: Confirmation instructions
+      - link "Bobine Sign in to Prism+" [ref=e12] [cursor=pointer]:
+        - /url: /dev/mailbox/5d2dbf9d9b700d73080eaa1cbbc3c936
+        - generic [ref=e13]: Bobine
+        - paragraph [ref=e14]: Sign in to Prism+
+      - link "Bobine Sign in to Prism+" [ref=e15] [cursor=pointer]:
+        - /url: /dev/mailbox/911764803cda51769207d2d18d2a087d
+        - generic [ref=e16]: Bobine
+        - paragraph [ref=e17]: Sign in to Prism+
+      - link "Bobine Confirmation instructions" [ref=e18] [cursor=pointer]:
+        - /url: /dev/mailbox/cee7a8fc0f3227b2c46e1907c010e812
+        - generic [ref=e19]: Bobine
+        - paragraph [ref=e20]: Confirmation instructions
+      - link "Bobine Log in instructions" [ref=e21] [cursor=pointer]:
+        - /url: /dev/mailbox/761dcf13ed3ca4f7f2595bdf0d9edd50
+        - generic [ref=e22]: Bobine
+        - paragraph [ref=e23]: Log in instructions
+      - button "Empty mailbox" [ref=e27]
+  - generic [ref=e28]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - term [ref=e32]: From
+        - definition [ref=e33]: "\"Bobine\" <onboarding@resend.dev>"
+      - generic [ref=e34]:
+        - term [ref=e35]: To
+        - definition [ref=e36]: operator@acme.test
+      - generic [ref=e37]:
+        - term [ref=e38]: Subject
+        - definition [ref=e39]: Confirmation instructions
+      - generic [ref=e40]:
+        - term [ref=e41]: Cc
+        - definition [ref=e42]: n/a
+      - generic [ref=e43]:
+        - term [ref=e44]: Bcc
+        - definition [ref=e45]: n/a
+      - generic [ref=e46]:
+        - term [ref=e47]: Reply-to
+        - definition [ref=e48]: n/a
+      - generic [ref=e49]:
+        - term [ref=e50]: Message-ID
+        - definition [ref=e51]: 0373948d7dab7614737e583c482515ea
+      - generic [ref=e52]:
+        - term [ref=e53]: Sent at
+        - definition [ref=e54]: 4/23/2026, 9:30:41 PM
+    - generic [ref=e55]:
+      - button "Text body" [ref=e56] [cursor=pointer]:
+        - text: Text body
+        - img [ref=e57]
+      - generic [ref=e59]:
+        - text: "============================== Hi operator@acme.test, You can confirm your account by visiting the URL below:"
+        - link "http://localhost:4000/users/log-in/ybyK7NRRLFfOfy97NtTRGmv9qP1XdBwRef9bkJCpRhM?org=acme-streaming" [ref=e60] [cursor=pointer]:
+          - /url: http://localhost:4000/users/log-in/ybyK7NRRLFfOfy97NtTRGmv9qP1XdBwRef9bkJCpRhM?org=acme-streaming
+        - text: If you didn't create an account with us, please ignore this. ==============================

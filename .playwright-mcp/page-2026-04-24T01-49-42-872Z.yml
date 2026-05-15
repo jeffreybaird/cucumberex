@@ -1,0 +1,124 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - complementary
+    - banner [ref=e3]:
+      - heading "Phoenix.Router.NoRouteError at GET /users/log-out" [level=5] [ref=e4]
+      - code [ref=e5]:
+        - generic [ref=e6]: no route found for GET /users/log-out (BobineWeb.Router)
+  - generic [ref=e7]:
+    - heading "Available routes" [level=3] [ref=e8]
+    - generic [ref=e9]: GET /dev/dashboard/css-:md5 Phoenix.LiveDashboard.Assets :css GET /dev/dashboard/js-:md5 Phoenix.LiveDashboard.Assets :js GET /dev/dashboard Phoenix.LiveDashboard.PageLive :home GET /dev/dashboard/:page Phoenix.LiveDashboard.PageLive :page GET /dev/dashboard/:node/:page Phoenix.LiveDashboard.PageLive :page * /dev/mailbox Plug.Swoosh.MailboxPreview [] GET /dev/components BobineWeb.Dev.CardShowcaseLive :index GET /dev/bot-stats BobineWeb.Dev.BotStatsLive :index POST /dev/bot-auth BobineWeb.Dev.BotAuthController :create GET /users/settings BobineWeb.UserLive.Settings :edit GET /users/settings/confirm-email/:token BobineWeb.UserLive.Settings :confirm_email POST /users/update-password BobineWeb.UserSessionController :update_password GET /users/register BobineWeb.UserLive.Registration :new GET /users/log-in BobineWeb.UserLive.Login :new GET /users/log-in/:token BobineWeb.UserLive.Confirmation :new POST /users/log-in BobineWeb.UserSessionController :create DELETE /users/log-out BobineWeb.UserSessionController :delete GET /admin BobineWeb.Admin.DashboardLive nil GET /admin/content BobineWeb.Admin.ContentLive nil GET /admin/collections BobineWeb.Admin.CollectionsLive nil GET /admin/series BobineWeb.Admin.SeriesLive nil GET /admin/series/:series_id/seasons/:season_id BobineWeb.Admin.SeasonLive nil GET /admin/tags BobineWeb.Admin.TagsLive nil GET /admin/catalog BobineWeb.Admin.CatalogLive nil GET /admin/landing BobineWeb.Admin.LandingLive nil GET /admin/analytics BobineWeb.Admin.AnalyticsLive nil GET /admin/analytics/videos/:video_id BobineWeb.Admin.VideoAnalyticsLive nil GET /admin/analytics/series/:series_id BobineWeb.Admin.SeriesAnalyticsLive nil GET /admin/analytics/series/:series_id/seasons/:season_id BobineWeb.Admin.SeasonAnalyticsLive nil GET /admin/branding BobineWeb.Admin.BrandingLive nil GET /admin/appearance BobineWeb.Admin.AppearanceLive nil GET /admin/members BobineWeb.Admin.MembersLive nil GET /admin/webhooks BobineWeb.Admin.WebhooksLive nil GET /admin/settings BobineWeb.Admin.SettingsLive nil GET /admin/settings/billing BobineWeb.Admin.BillingLive nil GET /admin/settings/billing/success BobineWeb.Admin.PlanSuccessLive nil GET /admin/plans BobineWeb.Admin.PlansLive nil GET /admin/coupons BobineWeb.Admin.CouponsLive nil GET /admin/audit-log BobineWeb.Admin.AuditLogLive nil GET /admin/live-events BobineWeb.Admin.LiveEventLive.Index nil GET /admin/live-events/new BobineWeb.Admin.LiveEventLive.New nil GET /admin/live-events/:slug BobineWeb.Admin.LiveEventLive.Show nil GET /admin/live-events/:slug/edit BobineWeb.Admin.LiveEventLive.Edit nil GET /admin/settings/stripe/return BobineWeb.StripeConnectController :return GET /admin/settings/stripe/refresh BobineWeb.StripeConnectController :refresh POST /super/organizations/:id/impersonate BobineWeb.ImpersonationController :start DELETE /super/impersonate BobineWeb.ImpersonationController :stop GET /super BobineWeb.Super.DashboardLive nil GET /super/analytics BobineWeb.Super.AnalyticsLive nil GET /super/organizations BobineWeb.Super.OrganizationsLive nil GET /super/organizations/new BobineWeb.Super.OrganizationNewLive nil GET /super/organizations/:id BobineWeb.Super.OrganizationShowLive nil GET /super/organizations/:id/edit BobineWeb.Super.OrganizationEditLive nil GET /super/users BobineWeb.Super.UsersLive nil GET /super/plans BobineWeb.Super.PlansLive nil GET /super/audit-log BobineWeb.Super.AuditLogLive nil GET /magic-link/:token BobineWeb.Viewer.SessionController :magic_link POST /viewer-session BobineWeb.Viewer.SessionController :create DELETE /viewer-session BobineWeb.Viewer.SessionController :delete POST /events/:slug/purchase BobineWeb.Viewer.LiveEventPpvController :create POST /viewer-session/impersonate BobineWeb.Viewer.SessionController :start_impersonation DELETE /viewer-session/impersonate BobineWeb.Viewer.SessionController :stop_impersonation GET /register BobineWeb.Viewer.RegisterLive nil GET /login BobineWeb.Viewer.LoginLive nil GET / BobineWeb.Viewer.HomeLive nil GET /events BobineWeb.Viewer.LiveEventController :index GET /events/:slug/calendar.ics BobineWeb.Viewer.LiveEventController :calendar_ics GET /browse BobineWeb.Viewer.BrowseLive nil GET /browse/:source BobineWeb.Viewer.ViewAllLive nil GET /collections/:slug BobineWeb.Viewer.CollectionLive nil GET /events/:slug BobineWeb.Viewer.LiveEventWatchLive nil GET /account BobineWeb.Viewer.AccountLive nil GET /account/payment-issue BobineWeb.Viewer.PaymentIssueLive nil GET /subscribe BobineWeb.Viewer.SubscribeLive nil GET /subscribe/success BobineWeb.Viewer.SubscribeSuccessLive nil GET /watch/:id BobineWeb.Viewer.WatchLive nil GET /series/:slug BobineWeb.Viewer.WatchLive :series GET /series/:slug/season/:season_number BobineWeb.Viewer.WatchLive :series_season GET /watchlist BobineWeb.Viewer.WatchlistLive nil GET /favorites BobineWeb.Viewer.WatchlistLive nil GET /queue BobineWeb.Viewer.WatchlistLive nil GET /history BobineWeb.Viewer.HistoryLive nil GET /health BobineWeb.HealthController :check POST /webhooks/mux BobineWeb.WebhookController :mux POST /webhooks/stripe BobineWeb.WebhookController :stripe
+  - generic [ref=e11]:
+    - textbox [ref=e12]: "# Phoenix.Router.NoRouteError at GET /users/log-out Exception: ** (Phoenix.Router.NoRouteError) no route found for GET /users/log-out (BobineWeb.Router) (bobine 0.1.0) deps/phoenix/lib/phoenix/router.ex:465: BobineWeb.Router.call/2 (bobine 0.1.0) lib/bobine_web/endpoint.ex:1: BobineWeb.Endpoint.plug_builder_call/2 (bobine 0.1.0) deps/plug/lib/plug/debugger.ex:155: BobineWeb.Endpoint.\"call (overridable 3)\"/2 (bobine 0.1.0) lib/bobine_web/endpoint.ex:1: BobineWeb.Endpoint.call/2 (phoenix 1.8.5) lib/phoenix/endpoint/sync_code_reload_plug.ex:22: Phoenix.Endpoint.SyncCodeReloadPlug.do_call/4 (bandit 1.10.4) lib/bandit/pipeline.ex:131: Bandit.Pipeline.call_plug!/2 (bandit 1.10.4) lib/bandit/pipeline.ex:42: Bandit.Pipeline.run/5 (bandit 1.10.4) lib/bandit/http1/handler.ex:13: Bandit.HTTP1.Handler.handle_data/3 (bandit 1.10.4) lib/bandit/delegating_handler.ex:18: Bandit.DelegatingHandler.handle_data/3 (bandit 1.10.4) lib/bandit/delegating_handler.ex:8: Bandit.DelegatingHandler.handle_continue/2 (stdlib 7.1) gen_server.erl:2424: :gen_server.try_handle_continue/3 (stdlib 7.1) gen_server.erl:2291: :gen_server.loop/4 (stdlib 7.1) proc_lib.erl:333: :proc_lib.init_p_do_apply/3 ## Connection details ### Params %{} ### Request info * URI: http://localhost:4000/users/log-out * Query string: ### Session nil"
+    - generic [ref=e14]:
+      - link "deps/phoenix/lib/phoenix/router.ex" [ref=e16] [cursor=pointer]:
+        - /url: ""
+      - generic [ref=e17]:
+        - generic [ref=e18]: 460 case __match_route__(decoded, method, host) do
+        - generic [ref=e19]: "461 {metadata, prepare, pipeline, plug_opts} ->"
+        - generic [ref=e20]: 462 Phoenix.Router.__call__(conn, metadata, prepare, pipeline, plug_opts)
+        - generic [ref=e21]: "463"
+        - generic [ref=e22]: 464 :error ->
+        - generic [ref=e23]: "465 raise NoRouteError, conn: conn, router: __MODULE__"
+        - generic [ref=e24]: 466 end
+        - generic [ref=e25]: 467 end
+        - generic [ref=e26]: "468"
+        - generic [ref=e27]: "469 defoverridable init: 1, call: 2"
+        - generic [ref=e28]: 470 end
+      - generic [ref=e30]:
+        - text: BobineWeb.Router.call/2
+        - link "Docs" [ref=e31] [cursor=pointer]:
+          - /url: https://hexdocs.pm/bobine/0.1.0/BobineWeb.Router.html#call/2
+        - generic [ref=e32]: bobine·
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - checkbox "Show only app frames" [ref=e36]
+          - text: Show only app frames
+        - button "Copy markdown" [ref=e37]:
+          - generic [ref=e38]: Copy markdown
+          - img [ref=e39]
+      - list [ref=e42]:
+        - listitem [ref=e43]:
+          - button "deps/phoenix/lib/phoenix/router.ex:465 BobineWeb.Router.call/2" [ref=e44] [cursor=pointer]:
+            - generic [ref=e45]:
+              - text: ·
+              - generic [ref=e46]: deps/phoenix/lib/phoenix/router.ex:465
+            - generic [ref=e47]: BobineWeb.Router.call/2
+        - listitem [ref=e48]:
+          - button "lib/bobine_web/endpoint.ex:1 BobineWeb.Endpoint.plug_builder_call/2" [ref=e49] [cursor=pointer]:
+            - generic [ref=e50]:
+              - text: ·
+              - generic [ref=e51]: lib/bobine_web/endpoint.ex:1
+            - generic [ref=e52]: BobineWeb.Endpoint.plug_builder_call/2
+        - listitem [ref=e53]:
+          - button "deps/plug/lib/plug/debugger.ex:155 BobineWeb.Endpoint.\"call (overridable 3)\"/2" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]:
+              - text: ·
+              - generic [ref=e56]: deps/plug/lib/plug/debugger.ex:155
+            - generic [ref=e57]: BobineWeb.Endpoint."call (overridable 3)"/2
+        - listitem [ref=e58]:
+          - button "lib/bobine_web/endpoint.ex:1 BobineWeb.Endpoint.call/2" [ref=e59] [cursor=pointer]:
+            - generic [ref=e60]:
+              - text: ·
+              - generic [ref=e61]: lib/bobine_web/endpoint.ex:1
+            - generic [ref=e62]: BobineWeb.Endpoint.call/2
+        - listitem [ref=e63]:
+          - button "phoenix· lib/phoenix/endpoint/sync_code_reload_plug.ex:22 Phoenix.Endpoint.SyncCodeReloadPlug.do_call/4" [ref=e64] [cursor=pointer]:
+            - generic [ref=e65]:
+              - text: phoenix·
+              - generic [ref=e66]: lib/phoenix/endpoint/sync_code_reload_plug.ex:22
+            - generic [ref=e67]: Phoenix.Endpoint.SyncCodeReloadPlug.do_call/4
+        - listitem [ref=e68]:
+          - button "bandit· lib/bandit/pipeline.ex:131 Bandit.Pipeline.call_plug!/2" [ref=e69] [cursor=pointer]:
+            - generic [ref=e70]:
+              - text: bandit·
+              - generic [ref=e71]: lib/bandit/pipeline.ex:131
+            - generic [ref=e72]: Bandit.Pipeline.call_plug!/2
+        - listitem [ref=e73]:
+          - button "bandit· lib/bandit/pipeline.ex:42 Bandit.Pipeline.run/5" [ref=e74] [cursor=pointer]:
+            - generic [ref=e75]:
+              - text: bandit·
+              - generic [ref=e76]: lib/bandit/pipeline.ex:42
+            - generic [ref=e77]: Bandit.Pipeline.run/5
+        - listitem [ref=e78]:
+          - button "bandit· lib/bandit/http1/handler.ex:13 Bandit.HTTP1.Handler.handle_data/3" [ref=e79] [cursor=pointer]:
+            - generic [ref=e80]:
+              - text: bandit·
+              - generic [ref=e81]: lib/bandit/http1/handler.ex:13
+            - generic [ref=e82]: Bandit.HTTP1.Handler.handle_data/3
+        - listitem [ref=e83]:
+          - button "bandit· lib/bandit/delegating_handler.ex:18 Bandit.DelegatingHandler.handle_data/3" [ref=e84] [cursor=pointer]:
+            - generic [ref=e85]:
+              - text: bandit·
+              - generic [ref=e86]: lib/bandit/delegating_handler.ex:18
+            - generic [ref=e87]: Bandit.DelegatingHandler.handle_data/3
+        - listitem [ref=e88]:
+          - button "bandit· lib/bandit/delegating_handler.ex:8 Bandit.DelegatingHandler.handle_continue/2" [ref=e89] [cursor=pointer]:
+            - generic [ref=e90]:
+              - text: bandit·
+              - generic [ref=e91]: lib/bandit/delegating_handler.ex:8
+            - generic [ref=e92]: Bandit.DelegatingHandler.handle_continue/2
+        - listitem [ref=e93]:
+          - button "stdlib· gen_server.erl:2424 :gen_server.try_handle_continue/3" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95]:
+              - text: stdlib·
+              - generic [ref=e96]: gen_server.erl:2424
+            - generic [ref=e97]: :gen_server.try_handle_continue/3
+        - listitem [ref=e98]:
+          - button "stdlib· gen_server.erl:2291 :gen_server.loop/4" [ref=e99] [cursor=pointer]:
+            - generic [ref=e100]:
+              - text: stdlib·
+              - generic [ref=e101]: gen_server.erl:2291
+            - generic [ref=e102]: :gen_server.loop/4
+        - listitem [ref=e103]:
+          - button "stdlib· proc_lib.erl:333 :proc_lib.init_p_do_apply/3" [ref=e104] [cursor=pointer]:
+            - generic [ref=e105]:
+              - text: stdlib·
+              - generic [ref=e106]: proc_lib.erl:333
+            - generic [ref=e107]: :proc_lib.init_p_do_apply/3
+  - generic [ref=e108]:
+    - group [ref=e109]:
+      - generic "Request info" [ref=e110] [cursor=pointer]
+    - group [ref=e111]:
+      - generic "Headers" [ref=e112] [cursor=pointer]
