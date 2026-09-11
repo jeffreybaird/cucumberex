@@ -144,12 +144,18 @@ defmodule Cucumberex.DSL do
   defp deserialize_pattern({:regex, source, flags}), do: Regex.compile!(source, flags)
   defp deserialize_pattern(pattern), do: pattern
 
-  @doc "Execute step: fun is {module, fun_name} or an anonymous fn."
+  @doc """
+  Execute step: fun is `{module, fun_name}` or an anonymous fn.
+
+  Returns `{:ok, world}`, `{:pending, world}`, or `{:error, exception,
+  stacktrace, world}`. The stacktrace is captured so formatters can render a
+  backtrace, mirroring what ExUnit shows for a failing test.
+  """
   def execute_step({module, fun_name}, world, args) do
     result = apply(module, fun_name, [world, args])
     normalize_result(result, world)
   rescue
-    e -> {:error, e, world}
+    e -> {:error, e, __STACKTRACE__, world}
   catch
     :cucumberex_pending -> {:pending, world}
   end
@@ -158,7 +164,7 @@ defmodule Cucumberex.DSL do
     result = apply(fun, [world | args])
     normalize_result(result, world)
   rescue
-    e -> {:error, e, world}
+    e -> {:error, e, __STACKTRACE__, world}
   catch
     :cucumberex_pending -> {:pending, world}
   end

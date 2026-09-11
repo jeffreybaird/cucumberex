@@ -82,6 +82,8 @@ defmodule Mix.Tasks.Cucumber do
   end
 
   defp run_cucumber(args) do
+    Cucumberex.Logging.route_to_stderr()
+
     config =
       args
       |> Loader.load()

@@ -10,6 +10,7 @@ defmodule CucumberexTest do
   doctest Cucumberex.Filter.NameFilter
   doctest Cucumberex.Filter.TagExpression
   doctest Cucumberex.Formatter.ANSI
+  doctest Cucumberex.Formatter.Failure
   doctest Cucumberex.Hook
   doctest Cucumberex.ParameterType
   doctest Cucumberex.ParameterType.BuiltIn

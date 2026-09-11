@@ -39,9 +39,16 @@ defmodule Cucumberex.Runner.StepRunner do
       {:pending, new_world} ->
         {Result.pending(), new_world}
 
-      {:error, e, new_world} ->
+      {:error, e, stacktrace, new_world} ->
         duration = System.monotonic_time(:millisecond) - start
-        {Result.failed(e, duration), new_world}
+
+        result = %{
+          Result.failed(e, duration)
+          | stacktrace: stacktrace,
+            location: step_def.location
+        }
+
+        {result, new_world}
     end
   end
 

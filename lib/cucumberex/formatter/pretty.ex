@@ -3,11 +3,12 @@ defmodule Cucumberex.Formatter.Pretty do
 
   use Cucumberex.Formatter
   alias Cucumberex.Events
-  alias Cucumberex.Formatter.ANSI
+  alias Cucumberex.Formatter.{ANSI, Failure, Output}
 
   defstruct [
-    :output,
+    :device,
     :color,
+    :backtrace,
     :snippets,
     current_feature: nil,
     results: [],
@@ -17,9 +18,10 @@ defmodule Cucumberex.Formatter.Pretty do
 
   @impl GenServer
   def init(opts) do
-    output = Keyword.get(opts, :output, :stdio)
+    device = Output.open(Keyword.get(opts, :output, :stdio))
     color = Keyword.get(opts, :color, IO.ANSI.enabled?())
-    {:ok, %__MODULE__{output: output, color: color, snippets: []}}
+    backtrace = Keyword.get(opts, :backtrace, false)
+    {:ok, %__MODULE__{device: device, color: color, backtrace: backtrace, snippets: []}}
   end
 
   defp on_event(%Events.TestRunStarted{}, state) do
@@ -48,15 +50,9 @@ defmodule Cucumberex.Formatter.Pretty do
     colored = colorize(state, text, result.status)
     puts(state, colored)
 
-    case result.status do
-      :failed ->
-        puts(state, colorize(state, "      #{format_error(result.error)}", :failed))
-
-      :undefined ->
-        :ok
-
-      _ ->
-        :ok
+    if result.status == :failed do
+      block = Failure.describe(result, indent: "      ", backtrace: state.backtrace)
+      puts(state, colorize(state, block, :failed))
     end
 
     state
@@ -92,6 +88,11 @@ defmodule Cucumberex.Formatter.Pretty do
 
   defp on_event(_, state), do: state
 
+  defp on_finish(state) do
+    Output.close(state.device)
+    state
+  end
+
   defp print_summary(state) do
     results = Enum.reverse(state.results)
     total = length(results)
@@ -120,20 +121,10 @@ defmodule Cucumberex.Formatter.Pretty do
 
   defp format_keyword(%{ast_node_ids: _}), do: ""
 
-  defp format_error(nil), do: "(no error)"
-  defp format_error(%{message: msg}), do: msg
-  defp format_error(e), do: inspect(e)
-
   defp colorize(%{color: true}, s, status), do: ANSI.colorize(s, status)
   defp colorize(_, s, _), do: s
 
-  defp puts(%{output: :stdio}, s), do: IO.puts(s)
-
-  defp puts(%{output: {:file, path}}, s) do
-    File.write!(path, s <> "\n", [:append])
-  end
-
-  defp puts(%{output: pid}, s) when is_pid(pid), do: send(pid, {:formatter_output, s})
+  defp puts(%{device: device}, s), do: Output.write(device, s <> "\n")
 
   defp format_duration(ms) when ms < 1000, do: "#{ms}ms"
 

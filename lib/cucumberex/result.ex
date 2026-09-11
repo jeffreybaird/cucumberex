@@ -3,12 +3,14 @@ defmodule Cucumberex.Result do
 
   @type status :: :passed | :failed | :pending | :undefined | :skipped | :ambiguous | :flaky
 
-  defstruct [:status, :error, :duration_ms]
+  defstruct [:status, :error, :duration_ms, :stacktrace, :location]
 
   @type t :: %__MODULE__{
           status: status(),
           error: Exception.t() | nil,
-          duration_ms: non_neg_integer() | nil
+          duration_ms: non_neg_integer() | nil,
+          stacktrace: Exception.stacktrace() | nil,
+          location: String.t() | nil
         }
 
   @doc """
