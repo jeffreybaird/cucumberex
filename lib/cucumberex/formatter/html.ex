@@ -45,11 +45,15 @@ defmodule Cucumberex.Formatter.HTML do
   defp on_event(%Events.TestRunFinished{}, state) do
     final = flush_feature(state)
     html = build_html(final.features)
-    File.write!(state.output_path, html)
+    write_output(state.output_path, html)
     final
   end
 
   defp on_event(_, state), do: state
+
+  defp write_output("-", html), do: IO.puts(html)
+  defp write_output(:stdio, html), do: IO.puts(html)
+  defp write_output(path, html), do: File.write!(path, html)
 
   defp flush_feature(%{current_feature: nil} = state), do: state
 
@@ -153,6 +157,8 @@ defmodule Cucumberex.Formatter.HTML do
     |> String.replace("\"", "&quot;")
   end
 
-  defp format_error(%{message: m}), do: m
+  defp format_error(e) when is_exception(e),
+    do: "(#{inspect(e.__struct__)}) #{Exception.message(e)}"
+
   defp format_error(e), do: inspect(e)
 end

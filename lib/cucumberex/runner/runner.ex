@@ -212,17 +212,30 @@ defmodule Cucumberex.Runner do
     formatters = config[:formatters] || [{Pretty, []}]
 
     Enum.map(formatters, fn
-      {mod, opts} ->
-        {:ok, fmt} = mod.start_link(opts)
-        Bus.subscribe(bus, fmt)
-        fmt
-
-      mod when is_atom(mod) ->
-        {:ok, fmt} = mod.start_link([])
-        Bus.subscribe(bus, fmt)
-        fmt
+      {mod, opts} -> start_formatter(mod, opts, config, bus)
+      mod when is_atom(mod) -> start_formatter(mod, [], config, bus)
     end)
   end
+
+  defp start_formatter(mod, opts, config, bus) do
+    {:ok, fmt} = mod.start_link(formatter_opts(opts, config))
+    Bus.subscribe(bus, fmt)
+    fmt
+  end
+
+  # Thread run-wide `--out` and `--backtrace` into each formatter. `--out` only
+  # overrides when it names a real destination; without it, file formatters keep
+  # their own default paths. Explicit per-formatter opts always win.
+  defp formatter_opts(opts, config) do
+    opts
+    |> maybe_put_output(config[:output])
+    |> Keyword.put_new(:backtrace, config[:backtrace] || false)
+  end
+
+  defp maybe_put_output(opts, output) when is_binary(output),
+    do: Keyword.put_new(opts, :output, output)
+
+  defp maybe_put_output(opts, _output), do: opts
 
   # Synchronous call drains each formatter's mailbox before returning,
   # ensuring file writes in on_event(TestRunFinished) complete before exit.

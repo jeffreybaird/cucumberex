@@ -4,13 +4,14 @@ defmodule Cucumberex.Formatter.JSON do
   use Cucumberex.Formatter
   alias Cucumberex.Events
 
-  defstruct [:output_path, features: %{}, current_feature_uri: nil, step_results: []]
+  defstruct [:output_path, :backtrace, features: %{}, current_feature_uri: nil, step_results: []]
 
   @impl GenServer
   def init(opts) do
     {:ok,
      %__MODULE__{
-       output_path: Keyword.get(opts, :output, "cucumber_report.json")
+       output_path: Keyword.get(opts, :output, "cucumber_report.json"),
+       backtrace: Keyword.get(opts, :backtrace, false)
      }}
   end
 
@@ -38,7 +39,7 @@ defmodule Cucumberex.Formatter.JSON do
       "result" => %{
         "status" => to_string(result.status),
         "duration" => (result.duration_ms || 0) * 1_000_000,
-        "error_message" => format_error(result.error)
+        "error_message" => error_message(result, state.backtrace)
       }
     }
 
@@ -72,12 +73,30 @@ defmodule Cucumberex.Formatter.JSON do
 
   defp on_event(_, state), do: state
 
+  # stdout (`-`) carries only the JSON document; any diagnostics go to stderr.
   defp write_output("-", json), do: IO.puts(json)
+  defp write_output(:stdio, json), do: IO.puts(json)
   defp write_output(path, json), do: File.write!(path, json)
 
   defp slugify(name), do: name |> String.downcase() |> String.replace(~r/\s+/, "-")
 
-  defp format_error(nil), do: nil
-  defp format_error(%{message: msg}), do: msg
-  defp format_error(e), do: inspect(e)
+  defp error_message(%{status: :failed} = result, backtrace?) do
+    base = error_header(result.error)
+    location = if result.location, do: "\n     at #{result.location}", else: ""
+    trace = backtrace_text(result.stacktrace, backtrace?)
+    base <> location <> trace
+  end
+
+  defp error_message(_result, _backtrace?), do: nil
+
+  defp error_header(error) when is_exception(error),
+    do: "(#{inspect(error.__struct__)}) #{Exception.message(error)}"
+
+  defp error_header(nil), do: "(unknown error)"
+  defp error_header(error), do: inspect(error)
+
+  defp backtrace_text(stacktrace, true) when is_list(stacktrace) and stacktrace != [],
+    do: "\n" <> Exception.format_stacktrace(stacktrace)
+
+  defp backtrace_text(_stacktrace, _backtrace?), do: ""
 end

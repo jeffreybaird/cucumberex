@@ -121,6 +121,9 @@ defmodule Cucumberex.Formatter.JUnit do
   end
 
   defp format_error(nil), do: "failed"
-  defp format_error(%{message: m}), do: m
+
+  defp format_error(e) when is_exception(e),
+    do: "(#{inspect(e.__struct__)}) #{Exception.message(e)}"
+
   defp format_error(e), do: inspect(e)
 end

@@ -27,11 +27,15 @@ defmodule Cucumberex.Formatter.Rerun do
   defp on_event(%Events.TestRunFinished{}, state) do
     if state.failed != [] do
       content = state.failed |> Enum.reverse() |> Enum.uniq() |> Enum.join("\n")
-      File.write!(state.output_path, content <> "\n")
+      write_output(state.output_path, content <> "\n")
     end
 
     state
   end
 
   defp on_event(_, state), do: state
+
+  defp write_output("-", content), do: IO.write(content)
+  defp write_output(:stdio, content), do: IO.write(content)
+  defp write_output(path, content), do: File.write!(path, content)
 end
