@@ -24,9 +24,11 @@ cucumberex-*.tar
 
 /originals/
 
-
 # Default formatter output files
 /cucumber_report.json
 /cucumber_report.html
 /cucumber_junit.xml
 /rerun.txt
+
+.DS_store
+
