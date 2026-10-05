@@ -32,6 +32,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   listed it three times. A scenario that passed on retry is reported as
   passed, `progress` no longer lists the failures of attempts that were
   retried, and `rerun` no longer lists scenarios that eventually passed.
+- `around_` hooks now run. They were registered but never called, and the
+  DSL compiled them as one-argument functions, so the documented
+  `fn world, run -> ... end` form could not have worked. `run.(world)`
+  executes the scenario's before hooks, steps, and after hooks and returns
+  the world; nested around hooks run first-defined outermost. A hook that
+  raises, or never calls `run`, fails the scenario, and each around hook
+  emits `HookStarted`/`HookFinished` events.
 
 ### Changed
 

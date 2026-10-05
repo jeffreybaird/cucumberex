@@ -503,6 +503,24 @@ the first argument to scope the hook:
 before_ "@admin and not @guest", fn world -> ... end
 ```
 
+An `around_` hook receives the world and a `run` function. `run.(world)`
+executes the scenario's `before_` hooks, steps, and `after_` hooks and
+returns the resulting world; the hook returns the final world. Several
+around hooks nest, the first defined outermost. A hook that never calls
+`run` fails the scenario.
+
+```elixir
+around_ "@db", fn world, run ->
+  :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyApp.Repo)
+
+  try do
+    run.(world)
+  after
+    Ecto.Adapters.SQL.Sandbox.checkin(MyApp.Repo)
+  end
+end
+```
+
 ## Tag Expressions
 
 Tag filters support boolean logic:

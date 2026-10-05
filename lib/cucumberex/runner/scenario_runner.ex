@@ -16,19 +16,8 @@ defmodule Cucumberex.Runner.ScenarioRunner do
 
     broadcast(bus, %Events.TestCaseStarted{pickle: pickle, attempt: config[:attempt] || 0})
 
-    {world, before_result} = run_hooks(:before, tags, world, config, bus)
-
-    {world, step_results} =
-      if Result.failed?(before_result) do
-        skipped_results = Enum.map(pickle.steps, fn _ -> Result.skipped() end)
-        {world, skipped_results}
-      else
-        run_steps(pickle.steps, tags, world, config, bus)
-      end
-
-    {_world, after_result} = run_hooks(:after, tags, world, config, bus)
-
-    all_results = [before_result, after_result | step_results]
+    body = fn world -> run_body(pickle, tags, world, config, bus) end
+    {_world, all_results} = wrap_in_around_hooks(body, tags, config, bus).(world)
     scenario_result = determine_scenario_result(all_results)
 
     broadcast(bus, %Events.TestCaseFinished{
@@ -57,6 +46,81 @@ defmodule Cucumberex.Runner.ScenarioRunner do
       false
   """
   def will_be_retried?(result, retries_left), do: Result.failed?(result) and retries_left > 0
+
+  # Before hooks, steps, and after hooks: everything an around hook wraps.
+  # Returns the final world and every result that decides the scenario's status.
+  defp run_body(pickle, tags, world, config, bus) do
+    {world, before_result} = run_hooks(:before, tags, world, config, bus)
+
+    {world, step_results} =
+      if Result.failed?(before_result) do
+        skipped_results = Enum.map(pickle.steps, fn _ -> Result.skipped() end)
+        {world, skipped_results}
+      else
+        run_steps(pickle.steps, tags, world, config, bus)
+      end
+
+    {world, after_result} = run_hooks(:after, tags, world, config, bus)
+
+    {world, [before_result, after_result | step_results]}
+  end
+
+  # Nest the body inside every applicable around hook, first-defined outermost.
+  # The registry lists the most recently registered hook first, so reducing
+  # over it wraps the latest-defined hook innermost.
+  defp wrap_in_around_hooks(body, tags, config, bus) do
+    config.hook_registry
+    |> HookRegistry.for_phase(:around)
+    |> Enum.filter(&Hook.applies_to?(&1, tags))
+    |> Enum.reduce(body, fn hook, inner -> fn world -> run_around(hook, inner, world, bus) end end)
+  end
+
+  # The hook's `run` returns only the world, so the wrapped results travel back
+  # in a message tagged with a fresh ref. Sending to the runner process keeps
+  # this working when the hook calls `run` from another process.
+  defp run_around(hook, inner, world, bus) do
+    ref = make_ref()
+    runner = self()
+
+    run = fn w ->
+      {w, results} = inner.(w)
+      send(runner, {ref, results})
+      w
+    end
+
+    broadcast(bus, %Events.HookStarted{hook: hook, phase: :around})
+    {hook_result, final_world} = call_around(hook, world, run)
+    inner_results = receive_around_results(ref)
+    hook_result = require_run_called(hook_result, inner_results, hook)
+    broadcast(bus, %Events.HookFinished{hook: hook, phase: :around, result: hook_result})
+
+    {final_world, [hook_result | inner_results || []]}
+  end
+
+  defp call_around(hook, world, run) do
+    case hook.fun.(world, run) do
+      new_world when is_map(new_world) -> {Result.passed(), new_world}
+      _other -> {Result.passed(), world}
+    end
+  rescue
+    e -> {Result.failed(e), world}
+  end
+
+  defp receive_around_results(ref) do
+    receive do
+      {^ref, results} -> results
+    after
+      0 -> nil
+    end
+  end
+
+  defp require_run_called(%Result{status: :passed}, nil, hook) do
+    Result.failed(%RuntimeError{
+      message: "around hook at #{hook.location} did not call run, so the scenario never ran"
+    })
+  end
+
+  defp require_run_called(hook_result, _inner_results, _hook), do: hook_result
 
   defp run_steps(steps, tags, world, config, bus) do
     if config[:dry_run] do
@@ -122,9 +186,6 @@ defmodule Cucumberex.Runner.ScenarioRunner do
         result = fun.(world)
         new_world = if is_map(result), do: result, else: world
         {Result.passed(), new_world}
-
-      :around ->
-        {Result.passed(), world}
 
       p when p in [:before_all, :after_all, :install_plugin] ->
         fun.()

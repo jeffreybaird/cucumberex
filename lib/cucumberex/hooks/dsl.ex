@@ -58,18 +58,27 @@ defmodule Cucumberex.Hooks.DSL do
     fun_name = :"__cucumberex_hook_#{counter}__"
 
     fun_def =
-      if phase in [:before_all, :after_all, :install_plugin] do
-        quote do
-          def unquote(fun_name)() do
-            apply(unquote(fun_ast), [])
+      cond do
+        phase in [:before_all, :after_all, :install_plugin] ->
+          quote do
+            def unquote(fun_name)() do
+              apply(unquote(fun_ast), [])
+            end
           end
-        end
-      else
-        quote do
-          def unquote(fun_name)(__world__) do
-            apply(unquote(fun_ast), [__world__])
+
+        phase == :around ->
+          quote do
+            def unquote(fun_name)(__world__, __run__) do
+              apply(unquote(fun_ast), [__world__, __run__])
+            end
           end
-        end
+
+        true ->
+          quote do
+            def unquote(fun_name)(__world__) do
+              apply(unquote(fun_ast), [__world__])
+            end
+          end
       end
 
     quote do
@@ -100,6 +109,10 @@ defmodule Cucumberex.Hooks.DSL do
   defp build_hook_fun(module, fun_name, phase)
        when phase in [:before_all, :after_all, :install_plugin] do
     fn -> apply(module, fun_name, []) end
+  end
+
+  defp build_hook_fun(module, fun_name, :around) do
+    fn world, run -> apply(module, fun_name, [world, run]) end
   end
 
   defp build_hook_fun(module, fun_name, _phase) do
