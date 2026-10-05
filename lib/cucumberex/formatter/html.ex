@@ -4,11 +4,12 @@ defmodule Cucumberex.Formatter.HTML do
   use Cucumberex.Formatter
   alias Cucumberex.Events
 
+  # Every feature is loaded before any scenario runs, so scenarios are
+  # collected per feature uri and attached to their features at the end.
   defstruct [
     :output_path,
     features: [],
-    current_feature: nil,
-    current_scenarios: [],
+    scenarios_by_uri: %{},
     current_scenario: nil,
     current_steps: []
   ]
@@ -22,13 +23,11 @@ defmodule Cucumberex.Formatter.HTML do
   end
 
   defp on_event(%Events.FeatureLoaded{feature: feature, uri: uri}, state) do
-    f = %{name: feature.name, uri: uri, scenarios: []}
-    prev = flush_feature(state)
-    %{prev | current_feature: f, current_scenarios: []}
+    %{state | features: state.features ++ [%{name: feature.name, uri: uri, scenarios: []}]}
   end
 
   defp on_event(%Events.TestCaseStarted{pickle: pickle}, state) do
-    s = %{name: pickle.name, tags: pickle.tags, steps: [], status: :passed}
+    s = %{name: pickle.name, uri: pickle.uri, tags: pickle.tags, steps: [], status: :passed}
     %{state | current_scenario: s, current_steps: []}
   end
 
@@ -45,14 +44,16 @@ defmodule Cucumberex.Formatter.HTML do
 
   defp on_event(%Events.TestCaseFinished{result: result}, state) do
     scenario = %{state.current_scenario | steps: state.current_steps, status: result.status}
-    %{state | current_scenarios: state.current_scenarios ++ [scenario], current_steps: []}
+    by_uri = Map.update(state.scenarios_by_uri, scenario.uri, [scenario], &(&1 ++ [scenario]))
+    %{state | scenarios_by_uri: by_uri, current_steps: []}
   end
 
   defp on_event(%Events.TestRunFinished{}, state) do
-    final = flush_feature(state)
-    html = build_html(final.features)
-    write_output(state.output_path, html)
-    final
+    features =
+      for f <- state.features, do: %{f | scenarios: Map.get(state.scenarios_by_uri, f.uri, [])}
+
+    write_output(state.output_path, build_html(features))
+    state
   end
 
   defp on_event(_, state), do: state
@@ -60,13 +61,6 @@ defmodule Cucumberex.Formatter.HTML do
   defp write_output("-", html), do: IO.puts(html)
   defp write_output(:stdio, html), do: IO.puts(html)
   defp write_output(path, html), do: File.write!(path, html)
-
-  defp flush_feature(%{current_feature: nil} = state), do: state
-
-  defp flush_feature(state) do
-    feature = %{state.current_feature | scenarios: state.current_scenarios}
-    %{state | features: state.features ++ [feature], current_feature: nil, current_scenarios: []}
-  end
 
   defp build_html(features) do
     scenarios_html = Enum.map_join(features, "\n", &feature_html/1)

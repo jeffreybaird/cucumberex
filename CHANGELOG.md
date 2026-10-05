@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   in reverse definition order. `after_`, `after_step_`, and `after_all_`
   hooks still run in reverse definition order, as in Cucumber, so teardown
   unwinds setup.
+- The `html` report lists each scenario under the feature it belongs to.
+  Every feature is loaded before any scenario runs, so all scenarios were
+  shown under the last feature file and the others appeared empty.
 
 ## [0.2.3] - 2026-10-05
 
