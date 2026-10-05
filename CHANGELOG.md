@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The `html` report lists each scenario under the feature it belongs to.
   Every feature is loaded before any scenario runs, so all scenarios were
   shown under the last feature file and the others appeared empty.
+- The `junit` report writes one `<testsuite>` per feature with that
+  feature's scenarios. It only ever wrote the last loaded feature's suite,
+  containing every scenario in the run, and each suite's `failures`
+  attribute was the run-wide total rather than its own count.
 
 ## [0.2.3] - 2026-10-05
 

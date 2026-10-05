@@ -4,7 +4,9 @@ defmodule Cucumberex.Formatter.JUnit do
   use Cucumberex.Formatter
   alias Cucumberex.Events
 
-  defstruct [:output_path, suites: [], current_suite: nil, current_tests: [], step_results: []]
+  # Every feature is loaded before any scenario runs, so testcases are
+  # collected per feature uri and placed in their suites at the end.
+  defstruct [:output_path, suites: [], tests_by_uri: %{}, step_results: []]
 
   @impl GenServer
   def init(opts) do
@@ -15,8 +17,7 @@ defmodule Cucumberex.Formatter.JUnit do
   end
 
   defp on_event(%Events.FeatureLoaded{uri: uri, feature: feature}, state) do
-    suite = %{name: feature.name, uri: uri, tests: []}
-    %{state | current_suite: suite, current_tests: []}
+    %{state | suites: state.suites ++ [%{name: feature.name, uri: uri, tests: []}]}
   end
 
   defp on_event(%Events.TestCaseStarted{}, state) do
@@ -35,17 +36,13 @@ defmodule Cucumberex.Formatter.JUnit do
 
   defp on_event(%Events.TestCaseFinished{pickle: pickle, result: result}, state) do
     testcase = build_testcase(pickle, result, Enum.reverse(state.step_results))
-    %{state | current_tests: state.current_tests ++ [testcase], step_results: []}
+    by_uri = Map.update(state.tests_by_uri, pickle.uri, [testcase], &(&1 ++ [testcase]))
+    %{state | tests_by_uri: by_uri, step_results: []}
   end
 
   defp on_event(%Events.TestRunFinished{}, state) do
     suites =
-      if state.current_suite do
-        suite = %{state.current_suite | tests: state.current_tests}
-        state.suites ++ [suite]
-      else
-        state.suites
-      end
+      for suite <- state.suites, do: %{suite | tests: Map.get(state.tests_by_uri, suite.uri, [])}
 
     xml = build_xml(suites)
     write_output(state.output_path, xml)
@@ -87,17 +84,12 @@ defmodule Cucumberex.Formatter.JUnit do
   defp build_xml(suites) do
     total = Enum.sum(Enum.map(suites, fn s -> length(s.tests) end))
 
-    failures =
-      Enum.sum(
-        Enum.map(suites, fn s ->
-          Enum.count(s.tests, &String.contains?(&1, "<failure"))
-        end)
-      )
+    failures = Enum.sum(Enum.map(suites, &count_failures(&1.tests)))
 
     suite_xml =
       Enum.map_join(suites, "\n", fn suite ->
         """
-        <testsuite name="#{escape_xml(suite.name)}" tests="#{length(suite.tests)}" failures="#{failures}">
+        <testsuite name="#{escape_xml(suite.name)}" tests="#{length(suite.tests)}" failures="#{count_failures(suite.tests)}">
           #{Enum.join(suite.tests, "\n  ")}
         </testsuite>
         """
@@ -110,6 +102,8 @@ defmodule Cucumberex.Formatter.JUnit do
     </testsuites>
     """
   end
+
+  defp count_failures(testcases), do: Enum.count(testcases, &String.contains?(&1, "<failure"))
 
   defp write_output("-", xml), do: IO.puts(xml)
   defp write_output(path, xml), do: File.write!(path, xml)

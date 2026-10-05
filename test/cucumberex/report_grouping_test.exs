@@ -7,7 +7,7 @@ defmodule Cucumberex.ReportGroupingTest do
 
   use ExUnit.Case
 
-  alias Cucumberex.Formatter.HTML
+  alias Cucumberex.Formatter.{HTML, JUnit}
 
   defmodule Steps do
     use Cucumberex.DSL
@@ -24,6 +24,27 @@ defmodule Cucumberex.ReportGroupingTest do
   setup_all do
     Cucumberex.DSL.load_module(Steps)
     :ok
+  end
+
+  describe "junit" do
+    test "writes one testsuite per feature holding that feature's scenarios" do
+      xml = report(JUnit)
+
+      assert suites(xml) == [
+               {"Feature A", ["A1 passes", "A2 fails"]},
+               {"Feature B", ["B1 passes"]}
+             ]
+    end
+
+    test "counts each testsuite's own failures" do
+      xml = report(JUnit)
+
+      assert Regex.scan(~r/<testsuite name="([^"]*)" tests="(\d+)" failures="(\d+)"/, xml,
+               capture: :all_but_first
+             ) == [["Feature A", "2", "1"], ["Feature B", "1", "0"]]
+
+      assert xml =~ ~s(<testsuites tests="3" failures="1">)
+    end
   end
 
   describe "html" do
@@ -49,6 +70,19 @@ defmodule Cucumberex.ReportGroupingTest do
     |> Cucumberex.Runner.run()
 
     File.read!(path)
+  end
+
+  defp suites(xml) do
+    for [name, body] <-
+          Regex.scan(~r/<testsuite name="([^"]*)".*?>(.*?)<\/testsuite>/s, xml,
+            capture: :all_but_first
+          ),
+        do:
+          {name,
+           for(
+             [t] <- Regex.scan(~r/<testcase name="([^"]*)"/, body, capture: :all_but_first),
+             do: t
+           )}
   end
 
   defp html_features(html) do
