@@ -16,6 +16,7 @@ defmodule CucumberexTest do
   doctest Cucumberex.ParameterType
   doctest Cucumberex.ParameterType.BuiltIn
   doctest Cucumberex.Result
+  doctest Cucumberex.Runner.ScenarioRunner
   doctest Cucumberex.StepDefinition
   doctest Cucumberex.StepDefinition.Expression
   doctest Cucumberex.StepDefinition.Snippet

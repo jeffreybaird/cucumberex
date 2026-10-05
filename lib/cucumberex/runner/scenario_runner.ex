@@ -31,9 +31,32 @@ defmodule Cucumberex.Runner.ScenarioRunner do
     all_results = [before_result, after_result | step_results]
     scenario_result = determine_scenario_result(all_results)
 
-    broadcast(bus, %Events.TestCaseFinished{pickle: pickle, result: scenario_result})
+    broadcast(bus, %Events.TestCaseFinished{
+      pickle: pickle,
+      result: scenario_result,
+      attempt: config[:attempt] || 0,
+      will_be_retried: will_be_retried?(scenario_result, config[:retries_left] || 0)
+    })
+
     scenario_result
   end
+
+  @doc """
+  Whether a scenario attempt that produced `result` is followed by another
+  attempt, given how many retries remain.
+
+  ## Examples
+
+      iex> Cucumberex.Runner.ScenarioRunner.will_be_retried?(Cucumberex.Result.failed(%RuntimeError{}), 1)
+      true
+
+      iex> Cucumberex.Runner.ScenarioRunner.will_be_retried?(Cucumberex.Result.failed(%RuntimeError{}), 0)
+      false
+
+      iex> Cucumberex.Runner.ScenarioRunner.will_be_retried?(Cucumberex.Result.passed(), 1)
+      false
+  """
+  def will_be_retried?(result, retries_left), do: Result.failed?(result) and retries_left > 0
 
   defp run_steps(steps, tags, world, config, bus) do
     if config[:dry_run] do

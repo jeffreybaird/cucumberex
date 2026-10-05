@@ -159,7 +159,7 @@ defmodule Cucumberex.Runner do
     fail_fast = config[:fail_fast] || false
 
     Enum.reduce_while(pickles, [], fn pickle, acc ->
-      result = run_with_retry(pickle, config, bus, retry_count)
+      result = run_with_retry(pickle, config, bus, 0, retry_count)
 
       new_acc = [result | acc]
 
@@ -172,11 +172,12 @@ defmodule Cucumberex.Runner do
     |> Enum.reverse()
   end
 
-  defp run_with_retry(pickle, config, bus, retries_left) do
-    result = ScenarioRunner.run(pickle, config, bus)
+  defp run_with_retry(pickle, config, bus, attempt, retries_left) do
+    attempt_config = Map.merge(config, %{attempt: attempt, retries_left: retries_left})
+    result = ScenarioRunner.run(pickle, attempt_config, bus)
 
-    if Result.failed?(result) and retries_left > 0 do
-      run_with_retry(pickle, config, bus, retries_left - 1)
+    if ScenarioRunner.will_be_retried?(result, retries_left) do
+      run_with_retry(pickle, config, bus, attempt + 1, retries_left - 1)
     else
       result
     end

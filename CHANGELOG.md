@@ -23,11 +23,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `Randomized with seed N` before the first scenario and after the summary;
   `--random N` replays that order. Previously the generated seed was never
   shown. Shuffling no longer reseeds the process-global `:rand` state.
+- `--retry` now numbers its attempts. `TestCaseStarted.attempt` was always
+  `0` and `TestCaseFinished.attempt` was never set; both now carry the
+  attempt number (0 for the first run).
 
 ### Changed
 
 - `Events.TestRunStarted` carries `:random_seed` (`nil` unless the run order
   is random).
+- `Events.TestCaseFinished` carries `:will_be_retried`, `true` when the
+  attempt failed and `--retry` will run the scenario again.
 - The same seed produces a different order than in 0.2.2, because shuffling
   now uses an explicit PRNG state.
 

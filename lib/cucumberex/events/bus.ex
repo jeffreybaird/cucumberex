@@ -73,7 +73,7 @@ defmodule Cucumberex.Events do
 
   defmodule TestCaseFinished do
     @moduledoc false
-    defstruct [:pickle, :result, :attempt]
+    defstruct [:pickle, :result, :attempt, will_be_retried: false]
   end
 
   defmodule TestStepStarted do
