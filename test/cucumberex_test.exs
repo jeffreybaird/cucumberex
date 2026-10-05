@@ -8,6 +8,7 @@ defmodule CucumberexTest do
   doctest Cucumberex.DocString
   doctest Cucumberex.Filter.LineFilter
   doctest Cucumberex.Filter.NameFilter
+  doctest Cucumberex.Filter.SourceLines
   doctest Cucumberex.Filter.TagExpression
   doctest Cucumberex.Formatter.ANSI
   doctest Cucumberex.Formatter.Failure

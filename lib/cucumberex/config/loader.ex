@@ -81,6 +81,9 @@ defmodule Cucumberex.Config.Loader do
       iex> Cucumberex.Config.Loader.parse_cli(["--dry-run", "features/a.feature"])
       %{dry_run: true, paths: ["features/a.feature"]}
 
+      iex> Cucumberex.Config.Loader.parse_cli(["features/a.feature:12"])
+      %{paths: ["features/a.feature"], lines: [{"features/a.feature", 12}]}
+
       iex> Cucumberex.Config.Loader.parse_cli([])
       %{}
   """
@@ -275,11 +278,21 @@ defmodule Cucumberex.Config.Loader do
   end
 
   defp parse_cli([arg | rest], acc, paths) do
-    # Feature file path or unknown flag - add to paths
-    if String.starts_with?(arg, "-") do
-      parse_cli(rest, acc, paths)
-    else
-      parse_cli(rest, acc, [arg | paths])
+    # Feature file path (optionally `path:LINE[:LINE...]`) or unknown flag
+    cond do
+      String.starts_with?(arg, "-") ->
+        parse_cli(rest, acc, paths)
+
+      # `features/a.feature:12:30` -> path "features/a.feature", suffix ":12:30"
+      match = Regex.run(~r/\A(.+?)((?::\d+)+)\z/, arg) ->
+        [_, path, suffix] = match
+        lines = for n <- String.split(suffix, ":", trim: true), do: {path, String.to_integer(n)}
+        acc = Map.update(acc, :lines, lines, &(&1 ++ lines))
+        paths = if path in paths, do: paths, else: [path | paths]
+        parse_cli(rest, acc, paths)
+
+      true ->
+        parse_cli(rest, acc, [arg | paths])
     end
   end
 

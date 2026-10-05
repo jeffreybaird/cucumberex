@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- `mix cucumber features/a.feature:12` now runs only the scenario at line 12.
+  The `:LINE` suffix was never parsed (the whole argument was treated as a
+  file path) and the runner never compared scenario lines. A line selects a
+  scenario when it is the scenario's keyword line or one of its step lines;
+  an `Examples` row line selects just that row. Several lines may be given
+  (`a.feature:12:30`), and line filters only narrow the file they name.
+
 ## [0.2.2] - 2026-09-11
 
 ### Fixed

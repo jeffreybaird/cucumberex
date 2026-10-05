@@ -204,4 +204,31 @@ defmodule Cucumberex.Filter.LineFilter do
         Path.expand(filter_uri) == Path.expand(uri)
     end)
   end
+
+  @doc """
+  Decide whether a scenario covering `lines` of `uri` survives `{uri, line}`
+  filters. Filters only constrain the file they name: a scenario in a file with
+  no line filters is always selected.
+
+  ## Examples
+
+      iex> Cucumberex.Filter.LineFilter.selects?("a.feature", [5, 6], [])
+      true
+
+      iex> Cucumberex.Filter.LineFilter.selects?("a.feature", [5, 6], [{"a.feature", 6}])
+      true
+
+      iex> Cucumberex.Filter.LineFilter.selects?("a.feature", [5, 6], [{"a.feature", 9}])
+      false
+
+      iex> Cucumberex.Filter.LineFilter.selects?("b.feature", [5, 6], [{"a.feature", 9}])
+      true
+  """
+  def selects?(uri, lines, filters) when is_list(filters) do
+    wanted = for {filter_uri, line} <- filters, same_file?(filter_uri, uri), do: line
+
+    wanted == [] or Enum.any?(lines, &(&1 in wanted))
+  end
+
+  defp same_file?(a, b), do: Path.expand(a) == Path.expand(b)
 end

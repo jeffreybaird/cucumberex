@@ -3,7 +3,7 @@ defmodule Cucumberex.Runner do
 
   alias Cucumberex.{Events, Result}
   alias Cucumberex.Events.Bus
-  alias Cucumberex.Filter.{LineFilter, NameFilter, TagExpression}
+  alias Cucumberex.Filter.{LineFilter, NameFilter, SourceLines, TagExpression}
   alias Cucumberex.Formatter.Pretty
   alias Cucumberex.Hooks.Registry, as: HookRegistry
   alias Cucumberex.Runner.ScenarioRunner
@@ -49,6 +49,7 @@ defmodule Cucumberex.Runner do
     end
   end
 
+  # Returns `{pickle, source_lines}` pairs; the lines feed `file:LINE` filters.
   defp load_pickles(config, bus) do
     paths = config[:paths] || ["features"]
     feature_files = expand_feature_files(paths, config)
@@ -56,9 +57,15 @@ defmodule Cucumberex.Runner do
     Enum.flat_map(feature_files, fn path ->
       envelopes = CucumberGherkin.parse_path(path, [])
       Enum.each(envelopes, &broadcast_feature_loaded(&1, path, bus))
-      Enum.flat_map(envelopes, &extract_pickle/1)
+      line_index = envelopes |> Enum.map(&index_source_lines/1) |> Enum.reduce(%{}, &Map.merge/2)
+
+      for pickle <- Enum.flat_map(envelopes, &extract_pickle/1),
+          do: {pickle, SourceLines.pickle_lines(pickle, line_index)}
     end)
   end
+
+  defp index_source_lines(%{message: {:gherkin_document, doc}}), do: SourceLines.index(doc)
+  defp index_source_lines(_envelope), do: %{}
 
   defp broadcast_feature_loaded(%{message: {:gherkin_document, doc}}, path, bus)
        when not is_nil(doc.feature) do
@@ -100,13 +107,12 @@ defmodule Cucumberex.Runner do
     name_pattern = config[:name]
     line_filters = config[:lines] || []
 
-    Enum.filter(pickles, fn p ->
-      tags = Enum.map(p.tags, & &1.name)
-
-      TagExpression.evaluate(tag_expr, tags) and
-        NameFilter.matches?(p.name, name_pattern) and
-        LineFilter.matches?(p.uri, nil, line_filters)
-    end)
+    for {p, source_lines} <- pickles,
+        tags = Enum.map(p.tags, & &1.name),
+        TagExpression.evaluate(tag_expr, tags),
+        NameFilter.matches?(p.name, name_pattern),
+        LineFilter.selects?(p.uri, source_lines, line_filters),
+        do: p
   end
 
   defp order_pickles(pickles, config) do
