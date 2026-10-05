@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- `before_`, `before_step_`, and `before_all_` hooks now run in the order they
+  are defined. The hook registry prepended each new hook, so every phase ran
+  in reverse definition order. `after_`, `after_step_`, and `after_all_`
+  hooks still run in reverse definition order, as in Cucumber, so teardown
+  unwinds setup.
+
 ## [0.2.3] - 2026-10-05
 
 ### Fixed

@@ -1,7 +1,7 @@
 defmodule Cucumberex.Runner do
   @moduledoc "Top-level test runner: load features, filter, order, execute, report."
 
-  alias Cucumberex.{Events, Result}
+  alias Cucumberex.{Events, Hook, Result}
   alias Cucumberex.Events.Bus
   alias Cucumberex.Filter.{LineFilter, NameFilter, SourceLines, TagExpression}
   alias Cucumberex.Formatter.Pretty
@@ -194,6 +194,7 @@ defmodule Cucumberex.Runner do
 
   defp run_before_all(config, bus) do
     HookRegistry.for_phase(config.hook_registry, :before_all)
+    |> Hook.in_run_order(:before_all)
     |> Enum.each(fn hook ->
       broadcast(bus, %Events.HookStarted{hook: hook, phase: :before_all})
       result = execute_global_hook(hook)
@@ -203,6 +204,7 @@ defmodule Cucumberex.Runner do
 
   defp run_after_all(config, bus) do
     HookRegistry.for_phase(config.hook_registry, :after_all)
+    |> Hook.in_run_order(:after_all)
     |> Enum.each(fn hook ->
       broadcast(bus, %Events.HookStarted{hook: hook, phase: :after_all})
       result = execute_global_hook(hook)

@@ -71,4 +71,22 @@ defmodule Cucumberex.Hook do
   def applies_to?(%__MODULE__{tag_expression: expr}, tags) do
     TagExpression.evaluate(expr, tags)
   end
+
+  @doc """
+  Put hooks of one phase, given in definition order, into the order they run.
+  Setup phases run in definition order; teardown phases (`:after`,
+  `:after_step`, `:after_all`) run in reverse, so they unwind the setup.
+
+  ## Examples
+
+      iex> Cucumberex.Hook.in_run_order([:first, :second], :before)
+      [:first, :second]
+
+      iex> Cucumberex.Hook.in_run_order([:first, :second], :after)
+      [:second, :first]
+  """
+  def in_run_order(hooks, phase) when phase in [:after, :after_step, :after_all],
+    do: Enum.reverse(hooks)
+
+  def in_run_order(hooks, _phase), do: hooks
 end

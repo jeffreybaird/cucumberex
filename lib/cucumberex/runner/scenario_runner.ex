@@ -65,13 +65,13 @@ defmodule Cucumberex.Runner.ScenarioRunner do
     {world, [before_result, after_result | step_results]}
   end
 
-  # Nest the body inside every applicable around hook, first-defined outermost.
-  # The registry lists the most recently registered hook first, so reducing
-  # over it wraps the latest-defined hook innermost.
+  # Nest the body inside every applicable around hook, first-defined outermost:
+  # reducing over the reversed list wraps the last-defined hook innermost.
   defp wrap_in_around_hooks(body, tags, config, bus) do
     config.hook_registry
     |> HookRegistry.for_phase(:around)
     |> Enum.filter(&Hook.applies_to?(&1, tags))
+    |> Enum.reverse()
     |> Enum.reduce(body, fn hook, inner -> fn world -> run_around(hook, inner, world, bus) end end)
   end
 
@@ -166,6 +166,7 @@ defmodule Cucumberex.Runner.ScenarioRunner do
       config.hook_registry
       |> HookRegistry.for_phase(phase)
       |> Enum.filter(&Hook.applies_to?(&1, tags))
+      |> Hook.in_run_order(phase)
 
     Enum.reduce_while(hooks, {world, Result.passed()}, fn hook, {w, _} ->
       broadcast(bus, %Events.HookStarted{hook: hook, phase: phase})

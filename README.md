@@ -496,6 +496,10 @@ Hook macros and phases:
 | `after_all_/1`           | Once, after all scenarios                 |
 | `around_/1`, `around_/2` | Wrap the scenario                         |
 
+Hooks of the same phase run in the order they are defined, except the
+teardown phases (`after_`, `after_step_`, `after_all_`), which run in
+reverse so teardown unwinds setup.
+
 The two-arity `before_` / `after_` / `around_` take a tag expression as
 the first argument to scope the hook:
 

@@ -13,6 +13,7 @@ defmodule Cucumberex.Hooks.Registry do
     GenServer.call(server, {:register, hook})
   end
 
+  @doc "Hooks registered for `phase`, sorted by `:order`, then in registration order."
   def for_phase(server \\ __MODULE__, phase) do
     GenServer.call(server, {:for_phase, phase})
   end
@@ -28,7 +29,7 @@ defmodule Cucumberex.Hooks.Registry do
 
   @impl true
   def handle_call({:register, hook}, _from, state) do
-    {:reply, :ok, %{state | hooks: [hook | state.hooks]}}
+    {:reply, :ok, %{state | hooks: state.hooks ++ [hook]}}
   end
 
   @impl true
