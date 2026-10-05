@@ -179,12 +179,20 @@ defmodule Cucumberex.Config.Loader do
     parse_cli(rest, Map.put(acc, :order, :reverse), paths)
   end
 
-  defp parse_cli(["--random", seed | rest], acc, paths) do
-    parse_cli(
-      rest,
-      Map.merge(acc, %{order: :random, random_seed: String.to_integer(seed)}),
-      paths
-    )
+  # The seed is optional: only a following integer is consumed as the seed.
+  defp parse_cli(["--random" | rest], acc, paths) do
+    acc = Map.put(acc, :order, :random)
+
+    case rest do
+      [candidate | after_seed] ->
+        case Integer.parse(candidate) do
+          {seed, ""} -> parse_cli(after_seed, Map.put(acc, :random_seed, seed), paths)
+          _ -> parse_cli(rest, acc, paths)
+        end
+
+      [] ->
+        parse_cli(rest, acc, paths)
+    end
   end
 
   defp parse_cli(["--retry", n | rest], acc, paths) do
