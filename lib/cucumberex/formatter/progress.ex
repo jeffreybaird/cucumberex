@@ -13,7 +13,8 @@ defmodule Cucumberex.Formatter.Progress do
     failures: [],
     undefined_snippets: [],
     step_count: 0,
-    col: 0
+    col: 0,
+    random_seed: nil
   ]
 
   @cols 70
@@ -52,10 +53,17 @@ defmodule Cucumberex.Formatter.Progress do
     %{state | undefined_snippets: [snippet | state.undefined_snippets]}
   end
 
+  defp on_event(%Events.TestRunStarted{random_seed: seed}, state) do
+    state = %{state | random_seed: seed}
+    print_random_seed(state)
+    state
+  end
+
   defp on_event(%Events.TestRunFinished{}, state) do
     print(state, "\n\n")
     print_failures(state)
     print_summary(state)
+    print_random_seed(state)
     state
   end
 
@@ -99,6 +107,9 @@ defmodule Cucumberex.Formatter.Progress do
   defp step_char(:skipped), do: "-"
   defp step_char(:ambiguous), do: "A"
   defp step_char(_), do: "?"
+
+  defp print_random_seed(%{random_seed: nil}), do: :ok
+  defp print_random_seed(state), do: print(state, "Randomized with seed #{state.random_seed}\n")
 
   defp print_summary(state) do
     results = Enum.reverse(state.results)

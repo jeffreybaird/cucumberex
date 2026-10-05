@@ -53,7 +53,7 @@ defmodule Cucumberex.Events do
 
   defmodule TestRunStarted do
     @moduledoc false
-    defstruct [:timestamp]
+    defstruct [:timestamp, :random_seed]
   end
 
   defmodule TestRunFinished do

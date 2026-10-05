@@ -13,7 +13,8 @@ defmodule Cucumberex.Formatter.Pretty do
     current_feature: nil,
     results: [],
     undefined_snippets: [],
-    start_time: nil
+    start_time: nil,
+    random_seed: nil
   ]
 
   @impl GenServer
@@ -24,8 +25,10 @@ defmodule Cucumberex.Formatter.Pretty do
     {:ok, %__MODULE__{device: device, color: color, backtrace: backtrace, snippets: []}}
   end
 
-  defp on_event(%Events.TestRunStarted{}, state) do
-    %{state | start_time: System.monotonic_time(:millisecond)}
+  defp on_event(%Events.TestRunStarted{random_seed: seed}, state) do
+    state = %{state | start_time: System.monotonic_time(:millisecond), random_seed: seed}
+    print_random_seed(state)
+    state
   end
 
   defp on_event(%Events.FeatureLoaded{uri: uri, feature: feature}, state) do
@@ -83,6 +86,7 @@ defmodule Cucumberex.Formatter.Pretty do
       |> Enum.each(fn s -> puts(state, ANSI.yellow(s)) end)
     end
 
+    print_random_seed(state)
     state
   end
 
@@ -92,6 +96,9 @@ defmodule Cucumberex.Formatter.Pretty do
     Output.close(state.device)
     state
   end
+
+  defp print_random_seed(%{random_seed: nil}), do: :ok
+  defp print_random_seed(state), do: puts(state, "Randomized with seed #{state.random_seed}")
 
   defp print_summary(state) do
     results = Enum.reverse(state.results)

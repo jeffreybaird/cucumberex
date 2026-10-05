@@ -9,10 +9,14 @@ defmodule Cucumberex.Runner do
   alias Cucumberex.Runner.ScenarioRunner
 
   def run(config) do
+    config = ensure_random_seed(config)
     {:ok, bus} = Bus.start_link()
     formatter_pids = setup_formatters(config, bus)
 
-    broadcast(bus, %Events.TestRunStarted{timestamp: DateTime.utc_now()})
+    broadcast(bus, %Events.TestRunStarted{
+      timestamp: DateTime.utc_now(),
+      random_seed: config[:random_seed]
+    })
 
     run_before_all(config, bus)
 
@@ -115,12 +119,20 @@ defmodule Cucumberex.Runner do
         do: p
   end
 
+  # A random run always has a seed, chosen up front, so formatters can report
+  # it and the same order can be replayed with `--random SEED`.
+  defp ensure_random_seed(%{order: :random} = config) do
+    if config[:random_seed],
+      do: config,
+      else: Map.put(config, :random_seed, :rand.uniform(99_999))
+  end
+
+  defp ensure_random_seed(config), do: config
+
   defp order_pickles(pickles, config) do
     case config[:order] do
       :random ->
-        seed = config[:random_seed] || :rand.uniform(9999)
-        :rand.seed(:exsss, {seed, seed, seed})
-        Enum.shuffle(pickles)
+        shuffle_with_seed(pickles, config[:random_seed])
 
       :reverse ->
         Enum.reverse(pickles)
@@ -128,6 +140,18 @@ defmodule Cucumberex.Runner do
       _ ->
         pickles
     end
+  end
+
+  # Uses an explicit PRNG state so the caller's process-global :rand state is
+  # left untouched, and the order depends only on the seed.
+  defp shuffle_with_seed(pickles, seed) do
+    {keyed, _state} =
+      Enum.map_reduce(pickles, :rand.seed_s(:exsss, seed), fn pickle, state ->
+        {key, state} = :rand.uniform_s(state)
+        {{key, pickle}, state}
+      end)
+
+    keyed |> Enum.sort_by(&elem(&1, 0)) |> Enum.map(&elem(&1, 1))
   end
 
   defp run_pickles(pickles, config, bus) do

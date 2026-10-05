@@ -18,6 +18,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `--random` no longer crashes when followed by a path or flag
   (`mix cucumber --random features/`), and works as the last argument. Only a
   following integer is taken as the seed.
+- Random order is now reproducible. A random run without an explicit seed
+  picks one up front, and the `pretty` and `progress` formatters print
+  `Randomized with seed N` before the first scenario and after the summary;
+  `--random N` replays that order. Previously the generated seed was never
+  shown. Shuffling no longer reseeds the process-global `:rand` state.
+
+### Changed
+
+- `Events.TestRunStarted` carries `:random_seed` (`nil` unless the run order
+  is random).
+- The same seed produces a different order than in 0.2.2, because shuffling
+  now uses an explicit PRNG state.
 
 ## [0.2.2] - 2026-09-11
 

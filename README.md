@@ -557,7 +557,7 @@ mix cucumber [options] [feature files or directories]
 | `--wip`                  | Fail if *any* scenario passes (Work-In-Progress)   |
 | `--retry N`              | Retry each failing scenario up to `N` times        |
 | `--order ORDER`          | `defined` (default), `random`, or `reverse`        |
-| `--random [SEED]`        | Shortcut for `--order random` with seed            |
+| `--random [SEED]`        | Shortcut for `--order random` with seed; the seed is printed so a run can be replayed |
 | `--reverse`              | Shortcut for `--order reverse`                     |
 
 ### Reporting
