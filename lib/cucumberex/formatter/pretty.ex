@@ -61,6 +61,10 @@ defmodule Cucumberex.Formatter.Pretty do
     state
   end
 
+  # An attempt that `--retry` will repeat is not the scenario's result; only
+  # the final attempt is reported.
+  defp on_event(%Events.TestCaseFinished{will_be_retried: true}, state), do: state
+
   defp on_event(%Events.TestCaseFinished{result: result}, state) do
     %{state | results: [result | state.results]}
   end

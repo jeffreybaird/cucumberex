@@ -27,6 +27,12 @@ defmodule Cucumberex.Formatter.JUnit do
     %{state | step_results: [result | state.step_results]}
   end
 
+  # An attempt that `--retry` will repeat is not the scenario's result; only
+  # the final attempt is reported.
+  defp on_event(%Events.TestCaseFinished{will_be_retried: true}, state) do
+    %{state | step_results: []}
+  end
+
   defp on_event(%Events.TestCaseFinished{pickle: pickle, result: result}, state) do
     testcase = build_testcase(pickle, result, Enum.reverse(state.step_results))
     %{state | current_tests: state.current_tests ++ [testcase], step_results: []}

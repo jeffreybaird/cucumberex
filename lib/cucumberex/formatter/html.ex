@@ -37,6 +37,12 @@ defmodule Cucumberex.Formatter.HTML do
     %{state | current_steps: state.current_steps ++ [entry]}
   end
 
+  # An attempt that `--retry` will repeat is not the scenario's result; only
+  # the final attempt is reported.
+  defp on_event(%Events.TestCaseFinished{will_be_retried: true}, state) do
+    %{state | current_steps: []}
+  end
+
   defp on_event(%Events.TestCaseFinished{result: result}, state) do
     scenario = %{state.current_scenario | steps: state.current_steps, status: result.status}
     %{state | current_scenarios: state.current_scenarios ++ [scenario], current_steps: []}

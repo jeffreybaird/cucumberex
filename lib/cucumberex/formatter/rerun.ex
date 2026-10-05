@@ -17,6 +17,10 @@ defmodule Cucumberex.Formatter.Rerun do
      }}
   end
 
+  # An attempt that `--retry` will repeat is not the scenario's result; only
+  # the final attempt is reported.
+  defp on_event(%Events.TestCaseFinished{will_be_retried: true}, state), do: state
+
   defp on_event(%Events.TestCaseFinished{pickle: pickle, result: result}, state) do
     case result.status do
       :failed -> %{state | failed: [pickle.uri | state.failed]}

@@ -26,6 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `--retry` now numbers its attempts. `TestCaseStarted.attempt` was always
   `0` and `TestCaseFinished.attempt` was never set; both now carry the
   attempt number (0 for the first run).
+- Formatters now report only each scenario's final attempt under `--retry`.
+  Every attempt used to be counted, so one scenario retried twice was
+  summarized as "3 scenarios, 3 failed", and `json`, `junit`, and `html`
+  listed it three times. A scenario that passed on retry is reported as
+  passed, `progress` no longer lists the failures of attempts that were
+  retried, and `rerun` no longer lists scenarios that eventually passed.
 
 ### Changed
 

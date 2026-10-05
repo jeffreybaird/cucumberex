@@ -11,6 +11,7 @@ defmodule Cucumberex.Formatter.Progress do
     :backtrace,
     results: [],
     failures: [],
+    attempt_failures: [],
     undefined_snippets: [],
     step_count: 0,
     col: 0,
@@ -45,8 +46,19 @@ defmodule Cucumberex.Formatter.Progress do
     end
   end
 
+  # An attempt that `--retry` will repeat is not the scenario's result; only
+  # the final attempt is reported.
+  defp on_event(%Events.TestCaseFinished{will_be_retried: true}, state) do
+    %{state | attempt_failures: []}
+  end
+
   defp on_event(%Events.TestCaseFinished{result: result}, state) do
-    %{state | results: [result | state.results]}
+    %{
+      state
+      | results: [result | state.results],
+        failures: state.attempt_failures ++ state.failures,
+        attempt_failures: []
+    }
   end
 
   defp on_event(%Events.UndefinedStep{snippet: snippet}, state) do
@@ -75,7 +87,7 @@ defmodule Cucumberex.Formatter.Progress do
   end
 
   defp record_failure(state, step, result) do
-    %{state | failures: [{step, result} | state.failures]}
+    %{state | attempt_failures: [{step, result} | state.attempt_failures]}
   end
 
   defp print_failures(%{failures: []}), do: :ok
