@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-10-05
+
 ### Fixed
 
 - `mix cucumber features/a.feature:12` now runs only the scenario at line 12.
@@ -161,7 +163,8 @@ Initial release.
 - **Tooling**: `mix format`, `mix credo --strict` (clean), `mix dialyzer`
   (clean), 78 doctests + 31 unit tests.
 
-[Unreleased]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.2...HEAD
+[Unreleased]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.3...HEAD
+[0.2.3]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.2...v0.2.3
 [0.2.2]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/jeffreybaird/cucumberex/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/jeffreybaird/cucumberex/compare/v0.1.0...v0.2.0
